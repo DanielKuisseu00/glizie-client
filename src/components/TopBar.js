@@ -8,6 +8,7 @@ import {
   Dimensions,
 } from "react-native";
 import { useFonts } from "expo-font";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const TopBar = ({ handleNavBack, topBarText }) => {
   const [loaded] = useFonts({
@@ -21,11 +22,7 @@ const TopBar = ({ handleNavBack, topBarText }) => {
   return (
     <View style={styles.topBar}>
       <Pressable onPress={handleNavBack} style={styles.backIconWrapper}>
-        <Image
-          source={require("../../assets/images/arrow-left.png")}
-          resizeMode="contain"
-          style={{ height: "100%", width: "100%" }}
-        />
+        <Icon name={"arrow-back"} size={30} />
       </Pressable>
       <Text style={styles.topBarText}>{topBarText}</Text>
     </View>
@@ -36,7 +33,7 @@ const styles = StyleSheet.create({
   topBar: {
     height: 50,
     width: Dimensions.get("window").width,
-    marginBottom: 24,
+    marginBottom: 0,
     paddingHorizontal: 24,
     alignItems: "center",
     flexDirection: "row",

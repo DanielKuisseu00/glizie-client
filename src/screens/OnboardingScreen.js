@@ -56,7 +56,7 @@ const OnboardingScreen = ({ navigation }) => {
   };
 
   const goToSignUp = () => {
-    navigation.navigate("LetYouIn");
+    navigation.navigate("welcome");
   };
 
   return (

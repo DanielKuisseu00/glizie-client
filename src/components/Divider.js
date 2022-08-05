@@ -1,11 +1,13 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Platform } from "react-native";
 
-const Divider = () => {
+const Divider = ({ text, textColor }) => {
   return (
     <View style={styles.dividerWrapper}>
       <View style={styles.divider}></View>
-      <Text style={styles.dividerText}>or</Text>
+      <Text style={[styles.dividerText, textColor && { color: textColor }]}>
+        {text}
+      </Text>
       <View style={styles.divider}></View>
     </View>
   );
@@ -16,6 +18,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: Platform.OS === "android" ? 48 : 24,
   },
   divider: {
     width: 100,

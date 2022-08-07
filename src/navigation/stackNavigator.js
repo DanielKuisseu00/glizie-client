@@ -15,12 +15,12 @@ function StackNavigator() {
     <NavigationContainer>
       <StatusBar translucent backgroundColor="transparent" />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="splash" component={SplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
         <Stack.Screen name="welcome" component={WelcomeScreen} />
         <Stack.Screen name="login" component={LoginScreen} />
         <Stack.Screen name="fillProfile" component={FillProfileScreen} />
         <Stack.Screen name="home" component={HomeScreen} />
+        <Stack.Screen name="splash" component={SplashScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -10,7 +10,13 @@ import {
 import { useFonts } from "expo-font";
 import Icon from "react-native-vector-icons/Ionicons";
 
-const TopBar = ({ handleNavBack, topBarText }) => {
+const TopBar = ({
+  handleNavBack,
+  topBarText,
+  iconColor,
+  backgroundColor,
+  isAbsolute,
+}) => {
   const [loaded] = useFonts({
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
   });
@@ -20,9 +26,17 @@ const TopBar = ({ handleNavBack, topBarText }) => {
   }
 
   return (
-    <View style={styles.topBar}>
+    <View
+      style={[
+        styles.topBar,
+        {
+          backgroundColor: backgroundColor,
+          position: isAbsolute ? "absolute" : "static",
+        },
+      ]}
+    >
       <Pressable onPress={handleNavBack} style={styles.backIconWrapper}>
-        <Icon name={"arrow-back"} size={30} />
+        <Icon name={"arrow-back"} size={30} color={iconColor} />
       </Pressable>
       <Text style={styles.topBarText}>{topBarText}</Text>
     </View>

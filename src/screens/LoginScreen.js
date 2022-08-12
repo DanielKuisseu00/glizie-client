@@ -42,6 +42,14 @@ const LoginScreen = ({ navigation }) => {
     navigation.navigate("fillProfile");
   };
 
+  const handleSignIn = () => {
+    navigation.navigate("home");
+  };
+
+  const handleLostPassword = () => {
+    navigation.navigate("forgot");
+  };
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "height" : "height"}
@@ -141,7 +149,7 @@ const LoginScreen = ({ navigation }) => {
                 ? { backgroundColor: "#FB9400" }
                 : null,
             ]}
-            onPress={handleSignup}
+            onPress={handleSignIn}
           >
             <Text style={styles.signUpText}>Sign in</Text>
           </Pressable>
@@ -187,6 +195,11 @@ const LoginScreen = ({ navigation }) => {
             <Text style={styles.linkText}>Sign up</Text>
           </Pressable>
         </View>
+        <View style={styles.bottomTextWrapper}>
+          <Pressable onPress={handleLostPassword}>
+            <Text style={styles.linkText}>Forgot Password</Text>
+          </Pressable>
+        </View>
       </SafeAreaView>
     </KeyboardAvoidingView>
   );
@@ -194,7 +207,7 @@ const LoginScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS === "android" ? 30 : 0,
+    marginTop: Platform.OS === "android" ? 10 : 0,
     flex: 1,
     backgroundColor: "white",
   },
@@ -205,7 +218,8 @@ const styles = StyleSheet.create({
   title: { fontFamily: "UrbanistBold", fontSize: 48 },
   formWrapper: {
     paddingHorizontal: 24,
-    marginVertical: 24,
+    marginTop: 24,
+    marginBottom: Platform.OS === "android" ? 60 : 24,
     height: "30%",
   },
   inputWrapper: {
@@ -258,7 +272,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
     flexDirection: "row",
-    marginTop: 24,
   },
   socialButton: {
     width: 88,

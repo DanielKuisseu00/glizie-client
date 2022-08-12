@@ -4,11 +4,11 @@ import { StyleSheet, View, Text, Platform } from "react-native";
 const Divider = ({ text, textColor }) => {
   return (
     <View style={styles.dividerWrapper}>
-      <View style={styles.divider}></View>
+      <View style={[styles.divider, { borderBottomColor: textColor }]}></View>
       <Text style={[styles.dividerText, textColor && { color: textColor }]}>
         {text}
       </Text>
-      <View style={styles.divider}></View>
+      <View style={[styles.divider, { borderBottomColor: textColor }]}></View>
     </View>
   );
 };
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: Platform.OS === "android" ? 48 : 24,
+    marginVertical: 24,
   },
   divider: {
     width: 100,

@@ -5,15 +5,16 @@ import {
   Text,
   View,
   Platform,
-  Image,
   Pressable,
   ImageBackground,
   StatusBar,
   KeyboardAvoidingView,
+  TextInput,
 } from "react-native";
 import { useFonts } from "expo-font";
 import Divider from "../components/Divider";
-import { LinearGradient } from "expo-linear-gradient";
+import SocialButton from "../components/SocialButton";
+import Animated, { BounceIn, useAnimatedStyle } from "react-native-reanimated";
 
 const WelcomeScreen = ({ navigation }) => {
   const [loaded] = useFonts({
@@ -26,21 +27,22 @@ const WelcomeScreen = ({ navigation }) => {
     return null;
   }
 
-  const handleNavBack = () => {
-    navigation.pop();
-  };
-
-  const handleNavSignup = () => {
-    navigation.navigate("fillProfile");
-  };
-
   const handleSignIn = () => {
     navigation.navigate("login");
   };
 
   return (
-    <KeyboardAvoidingView style={styles.container}>
-      <StatusBar barStyle={"light-content"} />
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "position" : "position"}
+      enabled
+      keyboardVerticalOffset={Platform.OS === "ios" ? -100 : -250}
+    >
+      <StatusBar
+        barStyle={"dark-content"}
+        backgroundColor="transparent"
+        translucent={true}
+      />
       <SafeAreaView>
         {/* background image component */}
         <ImageBackground
@@ -52,9 +54,28 @@ const WelcomeScreen = ({ navigation }) => {
             {/* title section */}
             <View style={styles.titleWrapper}>
               <Text style={styles.subtitle}>Welcome to ✋</Text>
-              <Text style={styles.title}>Glizie</Text>
+              <Text style={styles.title}>Grizlie</Text>
             </View>
             {/* form section */}
+            <View style={[styles.formSection]}>
+              {/* Social buttons */}
+              <SocialButton
+                iconName={"facebook"}
+                name="Facebook"
+                color="#2AA4F4"
+              />
+              <SocialButton iconName={"google"} name="Google" />
+              <SocialButton iconName={"apple"} name="Apple" color="black" />
+              <Divider text="or" textColor={"white"} />
+
+              {/* Email input */}
+              <View style={styles.inputContainer}>
+                <TextInput style={styles.emailInput} placeholder="Email" />
+                <Pressable onPress={handleSignIn} style={styles.continueBtn}>
+                  <Text style={styles.continueBtnText}>Continue</Text>
+                </Pressable>
+              </View>
+            </View>
           </View>
         </ImageBackground>
       </SafeAreaView>
@@ -80,9 +101,9 @@ const styles = StyleSheet.create({
   },
   titleWrapper: {
     width: "100%",
-    borderWidth: 1,
-    borderColor: "white",
-    height: 200,
+    height: "25%",
+    paddingLeft: 24,
+    paddingTop: 24,
   },
   subtitle: {
     color: "white",
@@ -94,10 +115,55 @@ const styles = StyleSheet.create({
     fontFamily: "UrbanistBold",
     fontSize: 96,
   },
-  subText: {
+  formSection: {
+    height: "75%",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 24,
+  },
+  socialBtn: {
+    width: "100%",
+    height: 60,
+    backgroundColor: "white",
+    borderRadius: 16,
+    flexDirection: "row",
+    paddingHorizontal: 24,
+  },
+  btnTextContainer: {
+    borderWidth: 1,
+    justifyContent: "center",
+  },
+  iconContainer: {
+    justifyContent: "center",
+    marginRight: 24,
+  },
+  btnText: {
+    fontFamily: "UrbanistBold",
+    fontSize: 18,
+  },
+  inputContainer: {
+    width: "100%",
+    marginBottom: 24,
+  },
+  emailInput: {
+    backgroundColor: "#f0f0f0",
+    height: 60,
+    borderRadius: 10,
+    paddingLeft: 24,
+    marginBottom: 24,
+  },
+  continueBtn: {
+    backgroundColor: "#FB9400",
+    width: "100%",
+    height: 50,
+    borderRadius: 15,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  continueBtnText: {
     color: "white",
-    fontFamily: "UrbanistRegular",
-    fontSize: 15,
+    fontFamily: "UrbanistSemiBold",
   },
 });
 

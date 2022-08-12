@@ -7,6 +7,7 @@ import LoginScreen from "../screens/LoginScreen";
 import FillProfileScreen from "../screens/FillProfileScreen";
 import HomeScreen from "../screens/HomeScreen";
 import { StatusBar } from "react-native";
+import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,7 @@ function StackNavigator() {
     <NavigationContainer>
       <StatusBar translucent backgroundColor="transparent" />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="forgot" component={ForgotPasswordScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
         <Stack.Screen name="welcome" component={WelcomeScreen} />
         <Stack.Screen name="login" component={LoginScreen} />

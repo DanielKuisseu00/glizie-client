@@ -5,7 +5,9 @@ import TopBar from "../components/TopBar";
 const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Home </Text>
+      <View>
+        <Text>Home</Text>
+      </View>
     </SafeAreaView>
   );
 };

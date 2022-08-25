@@ -9,7 +9,7 @@ const slideData = [
   },
   {
     image: require("../../assets/images/sitting.jpg"),
-    text: "Glizy has a money back gurantee, so you can book with peace of mind",
+    text: "Glizy has a money back gurantee, so you can book with peace of mind 😌",
   },
 ];
 

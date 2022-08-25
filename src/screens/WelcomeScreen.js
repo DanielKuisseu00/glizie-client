@@ -15,6 +15,7 @@ import { useFonts } from "expo-font";
 import Divider from "../components/Divider";
 import SocialButton from "../components/SocialButton";
 import Animated, { BounceIn, useAnimatedStyle } from "react-native-reanimated";
+import * as Haptics from "expo-haptics";
 
 const WelcomeScreen = ({ navigation }) => {
   const [loaded] = useFonts({
@@ -29,6 +30,17 @@ const WelcomeScreen = ({ navigation }) => {
 
   const handleSignIn = () => {
     navigation.navigate("login");
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+  };
+
+  const handleRegister = () => {
+    navigation.navigate("signUp");
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+  };
+
+  const handleNavHome = () => {
+    navigation.navigate("home");
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
   };
 
   return (
@@ -38,11 +50,7 @@ const WelcomeScreen = ({ navigation }) => {
       enabled
       keyboardVerticalOffset={Platform.OS === "ios" ? -100 : -250}
     >
-      <StatusBar
-        barStyle={"dark-content"}
-        backgroundColor="transparent"
-        translucent={true}
-      />
+      <StatusBar barStyle={"dark-content"} />
       <SafeAreaView>
         {/* background image component */}
         <ImageBackground
@@ -56,25 +64,34 @@ const WelcomeScreen = ({ navigation }) => {
               <Text style={styles.subtitle}>Welcome to ✋</Text>
               <Text style={styles.title}>Grizlie</Text>
             </View>
-            {/* form section */}
-            <View style={[styles.formSection]}>
-              {/* Social buttons */}
-              <SocialButton
-                iconName={"facebook"}
-                name="Facebook"
-                color="#2AA4F4"
-              />
-              <SocialButton iconName={"google"} name="Google" />
-              <SocialButton iconName={"apple"} name="Apple" color="black" />
-              <Divider text="or" textColor={"white"} />
-
-              {/* Email input */}
-              <View style={styles.inputContainer}>
-                <TextInput style={styles.emailInput} placeholder="Email" />
-                <Pressable onPress={handleSignIn} style={styles.continueBtn}>
-                  <Text style={styles.continueBtnText}>Continue</Text>
+            {/* ACTION SECTION */}
+            <View style={styles.actionContainer}>
+              {/* BUTTON CONTAINER */}
+              <View style={styles.btnConatiner}>
+                <Pressable
+                  onPress={handleRegister}
+                  style={[styles.btn, { backgroundColor: "#fc0328" }]}
+                >
+                  <Text style={styles.btnText}>Sign up</Text>
+                </Pressable>
+                <Pressable
+                  onPress={handleSignIn}
+                  style={[
+                    styles.btn,
+                    {
+                      backgroundColor: "rgba(219, 219, 219, 0.8)",
+                    },
+                  ]}
+                >
+                  <Text style={styles.btnText}>Log in</Text>
                 </Pressable>
               </View>
+              <Pressable
+                onPress={handleNavHome}
+                style={styles.skipBtnContainer}
+              >
+                <Text style={styles.skipText}>Skip and Start Browsing</Text>
+              </Pressable>
             </View>
           </View>
         </ImageBackground>
@@ -86,7 +103,7 @@ const WelcomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     marginTop: Platform.OS === "android" ? 30 : 0,
-    height: "100%",
+    height: "105%",
     justifyContent: "space-between",
     backgroundColor: "white",
     justifyContent: "flex-start",
@@ -96,7 +113,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   darkOverlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "rgba(0, 0, 0, 0.1)",
     flex: 1,
   },
   titleWrapper: {
@@ -111,59 +128,42 @@ const styles = StyleSheet.create({
     fontSize: 48,
   },
   title: {
-    color: "#FB9400",
+    color: "white",
     fontFamily: "UrbanistBold",
     fontSize: 96,
   },
-  formSection: {
-    height: "75%",
+  actionContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "flex-end",
+    paddingHorizontal: 24,
+    paddingBottom: 130,
+  },
+  btnConatiner: {
     width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  btn: {
+    width: "45%",
+    height: 70,
+    borderRadius: 80,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 24,
-  },
-  socialBtn: {
-    width: "100%",
-    height: 60,
-    backgroundColor: "white",
-    borderRadius: 16,
-    flexDirection: "row",
-    paddingHorizontal: 24,
-  },
-  btnTextContainer: {
-    borderWidth: 1,
-    justifyContent: "center",
-  },
-  iconContainer: {
-    justifyContent: "center",
-    marginRight: 24,
+    marginRight: 10,
   },
   btnText: {
+    color: "white",
     fontFamily: "UrbanistBold",
     fontSize: 18,
   },
-  inputContainer: {
-    width: "100%",
-    marginBottom: 24,
+  skipBtnContainer: {
+    marginTop: 40,
   },
-  emailInput: {
-    backgroundColor: "#f0f0f0",
-    height: 60,
-    borderRadius: 10,
-    paddingLeft: 24,
-    marginBottom: 24,
-  },
-  continueBtn: {
-    backgroundColor: "#FB9400",
-    width: "100%",
-    height: 50,
-    borderRadius: 15,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  continueBtnText: {
+  skipText: {
     color: "white",
-    fontFamily: "UrbanistSemiBold",
+    fontFamily: "UrbanistBold",
+    fontSize: 18,
   },
 });
 

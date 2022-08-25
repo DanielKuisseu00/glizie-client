@@ -18,7 +18,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { COLORS } from "../data/colors";
 import * as Haptics from "expo-haptics";
 
-const LoginScreen = ({ navigation }) => {
+const SignUpScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailIsFocused, setEmailIsFocused] = useState(false);
@@ -41,12 +41,12 @@ const LoginScreen = ({ navigation }) => {
   };
 
   const handleSignup = () => {
-    navigation.navigate("signUp");
+    navigation.navigate("home");
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
   };
 
   const handleSignIn = () => {
-    navigation.navigate("home");
+    navigation.navigate("login");
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
   };
 
@@ -65,7 +65,7 @@ const LoginScreen = ({ navigation }) => {
       <SafeAreaView style={styles.container}>
         <TopBar handleNavBack={handleNavBack} />
         <View style={styles.titleWrapper}>
-          <Text style={styles.title}>Lets get you logged in</Text>
+          <Text style={styles.title}>Let's get you started ❤️</Text>
         </View>
 
         {/* form wrapper */}
@@ -156,9 +156,9 @@ const LoginScreen = ({ navigation }) => {
                 ? { backgroundColor: COLORS.ruby }
                 : null,
             ]}
-            onPress={handleSignIn}
+            onPress={handleSignup}
           >
-            <Text style={styles.signUpText}>Sign in</Text>
+            <Text style={styles.signUpText}>Sign up</Text>
           </Pressable>
         </View>
         <Divider text="or continue with" textColor="#616161" />
@@ -180,9 +180,9 @@ const LoginScreen = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.bottomTextWrapper}>
-          <Text style={styles.bottomText}>Dont have an account yet? </Text>
-          <Pressable onPress={handleSignup}>
-            <Text style={styles.linkText}>Sign up</Text>
+          <Text style={styles.bottomText}>Already have an account? </Text>
+          <Pressable onPress={handleSignIn}>
+            <Text style={styles.linkText}>Sign in</Text>
           </Pressable>
         </View>
         <View style={styles.bottomTextWrapper}>
@@ -300,4 +300,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default SignUpScreen;

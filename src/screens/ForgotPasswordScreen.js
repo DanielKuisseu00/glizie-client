@@ -11,6 +11,9 @@ import {
 } from "react-native";
 import TopBar from "../components/TopBar";
 import { useFonts } from "expo-font";
+import { COLORS } from "../data/colors";
+import Icon from "react-native-vector-icons/Ionicons";
+import * as Haptics from "expo-haptics";
 
 const ForgotPasswordScreen = ({ navigation }) => {
   const [numberSelected, setNumberSelected] = useState(false);
@@ -32,7 +35,8 @@ const ForgotPasswordScreen = ({ navigation }) => {
   };
 
   const handleVerify = () => {
-    console.log("clicked");
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    navigation.navigate("pin");
   };
 
   return (
@@ -69,16 +73,13 @@ const ForgotPasswordScreen = ({ navigation }) => {
             style={[
               styles.button,
               {
-                borderColor: numberSelected ? "#FB9400" : "#757575",
+                borderColor: numberSelected ? COLORS.ruby : "#757575",
               },
             ]}
           >
             <View style={styles.iconSection}>
               <View style={styles.icon}>
-                <Image
-                  source={require("../../assets/images/message.png")}
-                  styles={{ width: 32, height: 32 }}
-                />
+                <Icon name="chatbox" color={COLORS.ruby} size={30} />
               </View>
             </View>
             <View style={styles.textSection}>
@@ -95,16 +96,13 @@ const ForgotPasswordScreen = ({ navigation }) => {
               styles.button,
 
               {
-                borderColor: emailSelected ? "#FB9400" : "#757575",
+                borderColor: emailSelected ? COLORS.ruby : "#757575",
               },
             ]}
           >
             <View style={styles.iconSection}>
               <View style={styles.icon}>
-                <Image
-                  source={require("../../assets/images/email.png")}
-                  styles={{ width: 32, height: 32 }}
-                />
+                <Icon name="mail" color={COLORS.ruby} size={30} />
               </View>
             </View>
             <View style={styles.textSection}>
@@ -172,7 +170,7 @@ const styles = StyleSheet.create({
   icon: {
     width: 80,
     height: 80,
-    backgroundColor: "#FDD499",
+    backgroundColor: COLORS.lightRuby,
     borderRadius: 100,
     alignItems: "center",
     justifyContent: "center",
@@ -196,7 +194,7 @@ const styles = StyleSheet.create({
   continueBtn: {
     width: "100%",
     height: 58,
-    backgroundColor: "#FB9400",
+    backgroundColor: COLORS.ruby,
     borderRadius: 35,
     alignItems: "center",
     justifyContent: "center",

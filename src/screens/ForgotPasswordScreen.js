@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Image,
   Platform,
@@ -14,10 +14,20 @@ import { useFonts } from "expo-font";
 import { COLORS } from "../data/colors";
 import Icon from "react-native-vector-icons/Ionicons";
 import * as Haptics from "expo-haptics";
+import LottieView from "lottie-react-native";
 
 const ForgotPasswordScreen = ({ navigation }) => {
+  const animation = useRef(null);
   const [numberSelected, setNumberSelected] = useState(false);
   const [emailSelected, setEmailSelected] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => animation.current?.play());
+
+    return () => {
+      animation.current?.reset();
+    };
+  }, []);
 
   const [loaded] = useFonts({
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
@@ -48,10 +58,16 @@ const ForgotPasswordScreen = ({ navigation }) => {
       {/* TOP section */}
 
       <View style={styles.topSection}>
-        <Image
-          source={require("../../assets/images/Frame.png")}
-          style={{ width: 200, height: 200 }}
-          resizeMode="cover"
+        <LottieView
+          autoPlay
+          loop
+          ref={animation}
+          style={{
+            width: 200,
+            height: "100%",
+            backgroundColor: "white",
+          }}
+          source={require("../../assets/images/passwordLottie.json")}
         />
       </View>
       {/* MIDDLE section */}
@@ -126,6 +142,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: Platform.OS === "android" ? 30 : 0,
     flex: 1,
+    backgroundColor: "white",
   },
   topSection: {
     flex: 0.6,
@@ -142,7 +159,7 @@ const styles = StyleSheet.create({
   },
   containerText: {
     fontFamily: "UrbanistMedium",
-    fontSize: 18,
+    fontSize: 16,
     paddingHorizontal: 24,
   },
   buttonContainer: {

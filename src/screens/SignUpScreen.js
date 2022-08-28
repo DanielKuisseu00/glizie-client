@@ -50,16 +50,11 @@ const SignUpScreen = ({ navigation }) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
   };
 
-  const handleLostPassword = () => {
-    navigation.navigate("forgot");
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-  };
-
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "position" : "height"}
-      enabled
-      keyboardVerticalOffset={Platform.OS === "ios" ? -100 : -200}
+      // behavior={Platform.OS === "ios" ? "position" : "height"}
+      // enabled
+      // keyboardVerticalOffset={Platform.OS === "ios" ? -100 : -200}
       style={styles.container}
     >
       <SafeAreaView style={styles.container}>
@@ -183,11 +178,6 @@ const SignUpScreen = ({ navigation }) => {
           <Text style={styles.bottomText}>Already have an account? </Text>
           <Pressable onPress={handleSignIn}>
             <Text style={styles.linkText}>Sign in</Text>
-          </Pressable>
-        </View>
-        <View style={styles.bottomTextWrapper}>
-          <Pressable onPress={handleLostPassword}>
-            <Text style={styles.linkText}>Forgot Password</Text>
           </Pressable>
         </View>
       </SafeAreaView>

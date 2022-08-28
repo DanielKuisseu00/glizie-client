@@ -57,9 +57,9 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "position" : "height"}
-      enabled
-      keyboardVerticalOffset={Platform.OS === "ios" ? -100 : -200}
+      // behavior={Platform.OS === "ios" ? "position" : "height"}
+      // enabled
+      // keyboardVerticalOffset={Platform.OS === "ios" ? -100 : -200}
       style={styles.container}
     >
       <SafeAreaView style={styles.container}>

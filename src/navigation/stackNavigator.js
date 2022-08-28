@@ -9,6 +9,7 @@ import HomeScreen from "../screens/HomeScreen";
 import { StatusBar } from "react-native";
 import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 import PinScreen from "../screens/PinScreen";
+import ChangePasswordScreen from "../screens/ChangePasswordScreen";
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ function StackNavigator() {
         <Stack.Screen name="splash" component={SplashScreen} />
         <Stack.Screen name="forgot" component={ForgotPasswordScreen} />
         <Stack.Screen name="pin" component={PinScreen} />
+        <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

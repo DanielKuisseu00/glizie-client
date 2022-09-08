@@ -70,7 +70,7 @@ const PinScreen = ({ navigation }) => {
 
   const handleVerify = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    navigation.navigate("ChangePassword");
+    navigation.navigate("changePassword");
   };
 
   return (

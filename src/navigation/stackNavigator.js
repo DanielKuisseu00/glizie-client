@@ -45,7 +45,7 @@ const TabNavigation = () => {
             return (
               <View style={{ alignItems: "center", justifyContent: "center" }}>
                 <IonIcon name="ios-home-sharp" color={color} size={size} />
-                <Text style={{ color: color, fontSize: 12 }}>Home</Text>
+                <Text style={{ color: color, fontSize: 13 }}>Home</Text>
               </View>
             );
           },
@@ -59,7 +59,7 @@ const TabNavigation = () => {
             return (
               <View style={{ alignItems: "center", justifyContent: "center" }}>
                 <Entypo name="shopping-bag" color={color} size={size} />
-                <Text style={{ color: color, fontSize: 12 }}>Shop</Text>
+                <Text style={{ color: color, fontSize: 13 }}>Shop</Text>
               </View>
             );
           },
@@ -73,7 +73,7 @@ const TabNavigation = () => {
             return (
               <View style={{ alignItems: "center", justifyContent: "center" }}>
                 <IonIcon name="ios-cart" color={color} size={size} />
-                <Text style={{ color: color, fontSize: 12 }}>Cart</Text>
+                <Text style={{ color: color, fontSize: 13 }}>Cart</Text>
               </View>
             );
           },
@@ -87,7 +87,7 @@ const TabNavigation = () => {
             return (
               <View style={{ alignItems: "center", justifyContent: "center" }}>
                 <MaterialICons name="account" color={color} size={size} />
-                <Text style={{ color: color, fontSize: 12 }}>Profile</Text>
+                <Text style={{ color: color, fontSize: 13 }}>Profile</Text>
               </View>
             );
           },

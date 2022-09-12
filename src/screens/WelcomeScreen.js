@@ -16,6 +16,7 @@ import Divider from "../components/Divider";
 import SocialButton from "../components/SocialButton";
 import Animated, { BounceIn, useAnimatedStyle } from "react-native-reanimated";
 import * as Haptics from "expo-haptics";
+import { COLORS } from "../data/colors";
 
 const WelcomeScreen = ({ navigation }) => {
   const [loaded] = useFonts({
@@ -76,14 +77,17 @@ const WelcomeScreen = ({ navigation }) => {
                 </Pressable>
                 <Pressable
                   onPress={handleSignIn}
+                  // rgba(219, 219, 219, 0.8)
                   style={[
                     styles.btn,
                     {
-                      backgroundColor: "rgba(219, 219, 219, 0.8)",
+                      backgroundColor: "white",
                     },
                   ]}
                 >
-                  <Text style={styles.btnText}>Log in</Text>
+                  <Text style={[styles.btnText, { color: COLORS.ruby }]}>
+                    Log in
+                  </Text>
                 </Pressable>
               </View>
               <Pressable
@@ -159,11 +163,16 @@ const styles = StyleSheet.create({
   },
   skipBtnContainer: {
     marginTop: 40,
+    backgroundColor: "white",
+    padding: 12,
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
   },
   skipText: {
-    color: "white",
+    color: "black",
     fontFamily: "UrbanistBold",
-    fontSize: 18,
+    fontSize: 13,
   },
 });
 

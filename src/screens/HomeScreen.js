@@ -14,6 +14,7 @@ import {
 import TopBar from "../components/TopBar";
 import { useFonts } from "expo-font";
 import { COLORS } from "../data/colors";
+import Banner from "../components/Banner";
 
 const HomeScreen = ({ navigation }) => {
   const [loaded] = useFonts({
@@ -32,27 +33,8 @@ const HomeScreen = ({ navigation }) => {
         barStyle={"dark-content"}
         backgroundColor={"transparent"}
       />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.bannerContainer} resizeMode="cover">
-          <Image
-            style={{ maxWidth: "100%", height: "60%" }}
-            source={require("../../assets/images/nails.jpg")}
-            resizeMode={"cover"}
-          />
-          <View style={styles.bottomContainer}>
-            <View style={styles.leftBanner}>
-              <Text style={styles.bannerText}>
-                Get Your Nails Ready for The Weekend
-              </Text>
-            </View>
-            <View style={styles.rightBanner}>
-              <Pressable style={styles.bannerBtn}>
-                <Text style={styles.bannerBtnText}>Shop Now</Text>
-              </Pressable>
-            </View>
-          </View>
-        </View>
-      </ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false} />
+      <Banner />
     </SafeAreaView>
   );
 };
@@ -60,45 +42,6 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     marginTop: Platform.OS === "android" ? 25 : 0,
-  },
-  bannerContainer: {
-    width: "100%",
-    height: Dimensions.get("screen").height * 0.25,
-    backgroundColor: "pink",
-    justifyContent: "flex-end",
-  },
-  bottomContainer: {
-    width: "100%",
-    height: "40%",
-    backgroundColor: "white",
-    flexDirection: "row",
-  },
-  leftBanner: {
-    flex: 1,
-    backgroundColor: "white",
-    alignItems: "flex-start",
-    justifyContent: "center",
-    paddingLeft: 24,
-  },
-  bannerText: {
-    fontFamily: "UrbanistBold",
-    fontSize: 20,
-  },
-  rightBanner: {
-    flex: 0.5,
-
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  bannerBtn: {
-    width: 100,
-    padding: 10,
-    borderRadius: 20,
-    backgroundColor: COLORS.ruby,
-  },
-  bannerBtnText: {
-    fontFamily: "UrbanistBold",
-    color: "white",
   },
 });
 

@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { useFonts } from "expo-font";
 import Icon from "react-native-vector-icons/Ionicons";
+import { COLORS } from "../data/colors";
 
 const TopBar = ({
   handleNavBack,
@@ -16,6 +17,7 @@ const TopBar = ({
   iconColor,
   backgroundColor,
   isAbsolute,
+  cart,
 }) => {
   const [loaded] = useFonts({
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
@@ -39,6 +41,16 @@ const TopBar = ({
         <Icon name={"arrow-back"} size={30} color={iconColor} />
       </Pressable>
       <Text style={styles.topBarText}>{topBarText}</Text>
+      {cart ? (
+        <View style={styles.cartContainer}>
+          <View style={styles.iconContainer}>
+            <Icon name="cart" size={20} color="white" />
+          </View>
+          <View style={styles.cartAmountContainer}>
+            <Text style={styles.cartAmountText}>1</Text>
+          </View>
+        </View>
+      ) : null}
     </View>
   );
 };
@@ -50,6 +62,7 @@ const styles = StyleSheet.create({
     marginBottom: 0,
     paddingHorizontal: 24,
     alignItems: "center",
+    justifyContent: "space-between",
     flexDirection: "row",
   },
   backIconWrapper: {
@@ -60,6 +73,26 @@ const styles = StyleSheet.create({
   topBarText: {
     fontFamily: "UrbanistBold",
     fontSize: 24,
+  },
+  cartContainer: {
+    backgroundColor: COLORS.ruby,
+    paddingHorizontal: 24,
+    height: 50,
+    width: 100,
+    borderRadius: 10,
+    flexDirection: "row",
+  },
+  iconContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+  },
+  cartAmountContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  cartAmountText: {
+    color: "white",
   },
 });
 

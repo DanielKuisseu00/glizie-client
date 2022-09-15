@@ -94,7 +94,7 @@ const WelcomeScreen = ({ navigation }) => {
                 onPress={handleNavHome}
                 style={styles.skipBtnContainer}
               >
-                <Text style={styles.skipText}>Skip and Start Browsing</Text>
+                <Text style={styles.skipText}>Skip</Text>
               </Pressable>
             </View>
           </View>
@@ -163,16 +163,17 @@ const styles = StyleSheet.create({
   },
   skipBtnContainer: {
     marginTop: 40,
+    height: 54,
+    width: 100,
     backgroundColor: "white",
-    padding: 12,
-    borderRadius: 20,
+    borderRadius: 24,
     alignItems: "center",
     justifyContent: "center",
   },
   skipText: {
     color: "black",
     fontFamily: "UrbanistBold",
-    fontSize: 13,
+    fontSize: 18,
   },
 });
 

@@ -36,7 +36,7 @@ export default function Banner() {
     }
   };
 
-  useInterval(() => goToNextSlide(), 3000);
+  useInterval(() => goToNextSlide(), 5000);
 
   const [loaded] = useFonts({
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),

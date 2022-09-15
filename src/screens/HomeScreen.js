@@ -1,31 +1,20 @@
 import React from "react";
 import {
   StyleSheet,
-  View,
-  Text,
   SafeAreaView,
   Platform,
   ScrollView,
-  Dimensions,
-  Image,
   StatusBar,
-  Pressable,
 } from "react-native";
-import TopBar from "../components/TopBar";
-import { useFonts } from "expo-font";
-import { COLORS } from "../data/colors";
 import Banner from "../components/Banner";
+import Categories from "../components/Categories";
+import Search from "../components/Search";
 
 const HomeScreen = ({ navigation }) => {
-  const [loaded] = useFonts({
-    UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
-    UrbanistSemiBold: require("../../assets/fonts/urbanist/Urbanist-SemiBold.ttf"),
-    UrbanistRegular: require("../../assets/fonts/urbanist/Urbanist-Regular.ttf"),
-  });
+  const handlePress = () => {
+    navigation.navigate("search");
+  };
 
-  if (!loaded) {
-    return null;
-  }
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar
@@ -33,8 +22,11 @@ const HomeScreen = ({ navigation }) => {
         barStyle={"dark-content"}
         backgroundColor={"transparent"}
       />
-      <ScrollView showsVerticalScrollIndicator={false} />
-      <Banner />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Banner />
+        <Search handlePress={handlePress} />
+        <Categories />
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -42,6 +34,8 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     marginTop: Platform.OS === "android" ? 25 : 0,
+    backgroundColor: "#ffffff",
+    height: "100%",
   },
 });
 

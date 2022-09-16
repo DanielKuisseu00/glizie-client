@@ -14,7 +14,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { COLORS } from "../data/colors";
 import * as Haptics from "expo-haptics";
 
-export default function ChangePasswordScreen({ navigation }) {
+export default function PasswordScreen({ navigation }) {
   const [password, setPassword] = useState("");
   const [retypedPassword, setRetypedPassword] = useState("");
   const [loaded] = useFonts({
@@ -31,22 +31,25 @@ export default function ChangePasswordScreen({ navigation }) {
     navigation.pop();
   };
 
-  const handleReset = () => {
+  const handleLogin = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     navigation.navigate("home");
+  };
+
+  const handleForgot = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    navigation.navigate("forgot");
   };
 
   return (
     <KeyboardAvoidingView style={styles.container}>
       <SafeAreaView style={{ flex: 1 }}>
         <TopBar handleNavBack={handleNavBack} />
-        <View style={styles.top}>
-          <Text style={styles.titleText}>Create new password</Text>
-          <Text style={styles.subText}>
-            Your new password should be diffrent from your old one.
-          </Text>
-        </View>
+
         <View style={styles.formContainer}>
+          <View style={styles.top}>
+            <Text style={styles.titleText}>Enter Password</Text>
+          </View>
           <View style={styles.inputGroup}>
             <Icon
               name="lock-closed"
@@ -56,33 +59,23 @@ export default function ChangePasswordScreen({ navigation }) {
             />
             <TextInput
               style={styles.input}
-              placeholder="new password"
+              placeholder="Password"
               secureTextEntry={true}
               value={password}
               onChangeText={setPassword}
             />
             <Icon name="eye-off" size={20} color="#9E9E9E" />
           </View>
-          <View style={[styles.inputGroup, { marginTop: 24 }]}>
-            <Icon
-              name="lock-closed"
-              size={20}
-              color="#9E9E9E"
-              style={{ marginRight: 10 }}
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="re-type password"
-              secureTextEntry={true}
-              value={retypedPassword}
-              onChangeText={setRetypedPassword}
-            />
-            <Icon name="eye-off" size={20} color="#9E9E9E" />
+          <View style={styles.bottomTextWrapper}>
+            <Text style={styles.bottomText}>cant remember password? </Text>
+            <Pressable onPress={handleForgot}>
+              <Text style={styles.linkText}>Reset</Text>
+            </Pressable>
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <Pressable style={styles.btn} onPress={handleReset}>
-            <Text style={styles.btnText}>Reset Password</Text>
+          <Pressable style={styles.btn} onPress={handleLogin}>
+            <Text style={styles.btnText}>Login</Text>
           </Pressable>
         </View>
       </SafeAreaView>
@@ -101,7 +94,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     alignItems: "center",
     justifyContent: "center",
-    flex: 0.4,
+    flex: 0.2,
   },
   titleText: {
     fontFamily: "UrbanistBold",
@@ -134,8 +127,24 @@ const styles = StyleSheet.create({
     fontFamily: "UrbanistBold",
     fontSize: 14,
   },
+  bottomTextWrapper: {
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    marginTop: 24,
+  },
+  bottomText: {
+    fontFamily: "UrbanistRegular",
+    color: "gray",
+    fontSize: 14,
+  },
+  linkText: {
+    color: COLORS.ruby,
+    fontFamily: "UrbanistSemiBold",
+    fontSize: 14,
+  },
   buttonContainer: {
-    flex: 0.4,
+    flex: 0.3,
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 24,

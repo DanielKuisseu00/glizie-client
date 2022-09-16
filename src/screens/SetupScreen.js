@@ -5,20 +5,19 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   TextInput,
   Pressable,
-  KeyboardAvoidingView,
 } from "react-native";
 import TopBar from "../components/TopBar";
 import { useFonts } from "expo-font";
-import Divider from "../components/Divider";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { COLORS } from "../data/colors";
 import * as Haptics from "expo-haptics";
 
-const SignUpScreen = ({ navigation }) => {
-  const [phoneNumber, setPhoneNumber] = useState("");
+const SetupScreen = ({ navigation }) => {
+  const [email, setEmail] = useState("");
+
+  const [passwordIsSet, setPasswordIsSet] = useState(false);
 
   const [loaded] = useFonts({
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
@@ -34,77 +33,67 @@ const SignUpScreen = ({ navigation }) => {
     navigation.pop();
   };
 
-  const handleVerify = () => {
-    navigation.navigate("pin", { dest: "password" });
+  const handleSignup = () => {
+    navigation.navigate("home");
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
   };
 
-  const handleSignIn = () => {
-    navigation.navigate("login");
+  const handleForgot = () => {
+    navigation.navigate("forgot");
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
   };
 
   return (
-    <KeyboardAvoidingView
-      // behavior={Platform.OS === "ios" ? "position" : "height"}
-      // enabled
-      // keyboardVerticalOffset={Platform.OS === "ios" ? -100 : -200}
-      style={styles.container}
-    >
-      <SafeAreaView style={styles.container}>
-        <TopBar handleNavBack={handleNavBack} />
-        <View style={styles.titleWrapper}>
-          <Text style={styles.title}>Let's get you started ❤️</Text>
+    <SafeAreaView style={styles.container}>
+      <TopBar handleNavBack={handleNavBack} />
+      <View style={styles.titleWrapper}>
+        <Text style={styles.title}>Enter Password</Text>
+      </View>
+
+      {/* form wrapper */}
+      <View style={styles.formWrapper}>
+        {/* email input wrapper */}
+        <View style={[styles.inputWrapper]}>
+          <View style={styles.iconWrapperInput}>
+            <Icon name="lock" size={20} color="#9E9E9E" />
+          </View>
+          <TextInput
+            keyboardType="email-address"
+            value={email}
+            onChangeText={(text) => {
+              setEmail(text);
+            }}
+            placeholder="password"
+            style={styles.input}
+          />
         </View>
 
-        {/* form wrapper */}
-        <View style={styles.formWrapper}>
-          {/* email input wrapper */}
-          <View style={[styles.inputWrapper]}>
-            <View style={styles.iconWrapperInput}>
-              <Icon name="phone" size={20} color="#9E9E9E" />
-            </View>
-            <TextInput
-              keyboardType="numbers-and-punctuation"
-              value={phoneNumber}
-              onChangeText={(text) => {
-                setPhoneNumber(text);
-              }}
-              placeholder="phone number"
-              style={styles.input}
-            />
-          </View>
+        <Pressable
+          style={[
+            styles.signUpBtn,
+            passwordIsSet && emailIsSet
+              ? { backgroundColor: COLORS.ruby }
+              : null,
+          ]}
+          onPress={handleSignup}
+        >
+          <Text style={styles.signUpText}>Continue</Text>
+        </Pressable>
+      </View>
 
-          <Pressable style={[styles.signUpBtn]} onPress={handleVerify}>
-            <Text style={styles.signUpText}>Continue</Text>
-          </Pressable>
-        </View>
-        <Divider text="or" textColor="#616161" />
-        <View style={styles.socialWrapper}>
-          <View style={styles.socialButton}>
-            <View style={styles.iconWrapper}>
-              <Icon name="facebook" color="#2AA4F4" size={35} />
-            </View>
-          </View>
-          <View style={styles.socialButton}>
-            <View style={styles.iconWrapper}>
-              <Icon name="google" size={35} />
-            </View>
-          </View>
-          <View style={styles.socialButton}>
-            <View style={styles.iconWrapper}>
-              <Icon name="apple" color="black" size={35} />
-            </View>
-          </View>
-        </View>
-      </SafeAreaView>
-    </KeyboardAvoidingView>
+      <View style={styles.bottomTextWrapper}>
+        <Text style={styles.bottomText}>Can't remeber Password? </Text>
+        <Pressable onPress={handleForgot}>
+          <Text style={styles.linkText}>Reset</Text>
+        </Pressable>
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS === "android" ? 10 : 0,
+    marginTop: Platform.OS === "android" ? 35 : 0,
     height: "100%",
     backgroundColor: "white",
   },
@@ -112,10 +101,9 @@ const styles = StyleSheet.create({
     marginVertical: 24,
     paddingHorizontal: 24,
   },
-  title: { fontFamily: "UrbanistBold", fontSize: 48 },
+  title: { fontFamily: "UrbanistBold", fontSize: 25 },
   formWrapper: {
     paddingHorizontal: 24,
-    marginTop: 24,
     marginBottom: Platform.OS === "android" ? 0 : 0,
   },
   inputWrapper: {
@@ -156,13 +144,13 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.ruby,
     alignItems: "center",
     justifyContent: "center",
+    marginTop: 24,
     borderRadius: 10,
   },
   signUpText: {
     color: "white",
     fontFamily: "UrbanistBold",
     fontSize: 16,
-    backgroundColor: COLORS.ruby,
   },
   socialWrapper: {
     alignItems: "center",
@@ -206,4 +194,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUpScreen;
+export default SetupScreen;

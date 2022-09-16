@@ -14,7 +14,8 @@ import TopBar from "../components/TopBar";
 import { COLORS } from "../data/colors";
 import * as Haptics from "expo-haptics";
 
-const PinScreen = ({ navigation }) => {
+const PinScreen = ({ navigation, route }) => {
+  const dest = route.params.dest;
   const textInputRef = useRef(null);
   const [code, setCode] = useState("");
   const [pinReady, setPinReady] = useState(false);
@@ -25,6 +26,7 @@ const PinScreen = ({ navigation }) => {
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
     UrbanistSemiBold: require("../../assets/fonts/urbanist/Urbanist-SemiBold.ttf"),
     UrbanistRegular: require("../../assets/fonts/urbanist/Urbanist-Regular.ttf"),
+    UrbanistMedium: require("../../assets/fonts/urbanist/Urbanist-Medium.ttf"),
   });
 
   if (!loaded) {
@@ -70,7 +72,7 @@ const PinScreen = ({ navigation }) => {
 
   const handleVerify = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    navigation.navigate("changePassword");
+    navigation.navigate(dest);
   };
 
   return (

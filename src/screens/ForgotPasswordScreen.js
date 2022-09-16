@@ -46,7 +46,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
 
   const handleVerify = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    navigation.navigate("pin");
+    navigation.navigate("pin", { dest: "changePassword" });
   };
 
   return (

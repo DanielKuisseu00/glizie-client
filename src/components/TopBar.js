@@ -34,6 +34,7 @@ const TopBar = ({
         {
           backgroundColor: backgroundColor,
           position: isAbsolute ? "absolute" : "static",
+          justifyContent: cart ? "space-between" : "flex-start",
         },
       ]}
     >
@@ -62,7 +63,6 @@ const styles = StyleSheet.create({
     marginBottom: 0,
     paddingHorizontal: 24,
     alignItems: "center",
-    justifyContent: "space-between",
     flexDirection: "row",
   },
   backIconWrapper: {

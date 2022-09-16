@@ -11,6 +11,8 @@ import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 import PinScreen from "../screens/PinScreen";
 import ChangePasswordScreen from "../screens/ChangePasswordScreen";
 import TabNavigation from "./TabNavigation";
+import SetupScreen from "../screens/SetupScreen";
+import PasswordScreen from "../screens/PassowrdScreen";
 
 const Stack = createStackNavigator();
 
@@ -19,7 +21,7 @@ function StackNavigator() {
     <NavigationContainer>
       <StatusBar translucent backgroundColor="transparent" />
       <Stack.Navigator
-        initialRouteName="welcome"
+        initialRouteName="home"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
@@ -31,6 +33,8 @@ function StackNavigator() {
         <Stack.Screen name="forgot" component={ForgotPasswordScreen} />
         <Stack.Screen name="pin" component={PinScreen} />
         <Stack.Screen name="changePassword" component={ChangePasswordScreen} />
+        <Stack.Screen name="setup" component={SetupScreen} />
+        <Stack.Screen name="password" component={PasswordScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

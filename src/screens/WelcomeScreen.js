@@ -8,31 +8,20 @@ import {
   Pressable,
   ImageBackground,
   StatusBar,
-  KeyboardAvoidingView,
-  TextInput,
 } from "react-native";
 import { useFonts } from "expo-font";
-import Divider from "../components/Divider";
-import SocialButton from "../components/SocialButton";
-import Animated, { BounceIn, useAnimatedStyle } from "react-native-reanimated";
 import * as Haptics from "expo-haptics";
 import { COLORS } from "../data/colors";
+import Icon from "react-native-vector-icons/Feather";
 
 const WelcomeScreen = ({ navigation }) => {
   const [loaded] = useFonts({
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
-    UrbanistSemiBold: require("../../assets/fonts/urbanist/Urbanist-SemiBold.ttf"),
-    UrbanistRegular: require("../../assets/fonts/urbanist/Urbanist-Regular.ttf"),
   });
 
   if (!loaded) {
     return null;
   }
-
-  const handleSignIn = () => {
-    navigation.navigate("login");
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-  };
 
   const handleRegister = () => {
     navigation.navigate("signUp");
@@ -45,75 +34,52 @@ const WelcomeScreen = ({ navigation }) => {
   };
 
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior={Platform.OS === "ios" ? "position" : "position"}
-      enabled
-      keyboardVerticalOffset={Platform.OS === "ios" ? -100 : -250}
-    >
-      <StatusBar barStyle={"dark-content"} />
-      <SafeAreaView>
-        {/* background image component */}
-        <ImageBackground
-          source={require("../../assets/images/pink.jpg")}
-          style={styles.backgroundContainer}
-        >
-          {/* dark overlay */}
-          <View style={styles.darkOverlay}>
-            {/* title section */}
-            <View style={styles.titleWrapper}>
-              <Text style={styles.subtitle}>Welcome to ✋</Text>
-              <Text style={styles.title}>Grizlie</Text>
-            </View>
-            {/* ACTION SECTION */}
-            <View style={styles.actionContainer}>
-              {/* BUTTON CONTAINER */}
-              <View style={styles.btnConatiner}>
-                <Pressable
-                  onPress={handleRegister}
-                  style={[styles.btn, { backgroundColor: "#fc0328" }]}
-                >
-                  <Text style={styles.btnText}>Sign up</Text>
-                </Pressable>
-                <Pressable
-                  onPress={handleSignIn}
-                  // rgba(219, 219, 219, 0.8)
-                  style={[
-                    styles.btn,
-                    {
-                      backgroundColor: "white",
-                    },
-                  ]}
-                >
-                  <Text style={[styles.btnText, { color: COLORS.ruby }]}>
-                    Log in
-                  </Text>
-                </Pressable>
-              </View>
-              <Pressable
-                onPress={handleNavHome}
-                style={styles.skipBtnContainer}
-              >
+    <SafeAreaView style={styles.container}>
+      <StatusBar translucent barStyle={"dark-content"} />
+      {/* background image component */}
+      <ImageBackground
+        source={require("../../assets/images/pink.jpg")}
+        style={styles.backgroundContainer}
+      >
+        {/* dark overlay */}
+        <View style={styles.darkOverlay}>
+          {/* title section */}
+          <View style={styles.titleWrapper}>
+            <Text style={styles.subtitle}>Welcome to ✋</Text>
+            <Text style={styles.title}>Grizlie</Text>
+          </View>
+          {/* ACTION SECTION */}
+          <View style={styles.actionContainer}>
+            {/* BUTTON CONTAINER */}
+            <View style={styles.actionWrapper}>
+              <Pressable onPress={handleRegister} style={styles.btn}>
+                <Text style={styles.btnText}>Continue</Text>
+                <View style={styles.iconContainer}>
+                  <Icon name="arrow-right" size={30} color="white" />
+                </View>
+              </Pressable>
+
+              <Pressable onPress={handleNavHome} style={styles.skipBtn}>
                 <Text style={styles.skipText}>Skip</Text>
               </Pressable>
             </View>
           </View>
-        </ImageBackground>
-      </SafeAreaView>
-    </KeyboardAvoidingView>
+        </View>
+      </ImageBackground>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     marginTop: Platform.OS === "android" ? 30 : 0,
-    height: "105%",
+    height: "100%",
     justifyContent: "space-between",
     backgroundColor: "white",
     justifyContent: "flex-start",
   },
   backgroundContainer: {
-    height: "100%",
+    height: "103%",
     width: "100%",
   },
   darkOverlay: {
@@ -137,43 +103,43 @@ const styles = StyleSheet.create({
     fontSize: 96,
   },
   actionContainer: {
-    flex: 1,
+    height: "75%",
     alignItems: "center",
     justifyContent: "flex-end",
-    paddingHorizontal: 24,
-    paddingBottom: 130,
   },
-  btnConatiner: {
+  actionWrapper: {
     width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-around",
-  },
-  btn: {
-    width: "45%",
-    height: 70,
-    borderRadius: 80,
+    height: "25%",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
-    marginRight: 10,
+    paddingHorizontal: 24,
+    marginBottom: Platform.OS === "android" ? 50 : -10,
+  },
+  btn: {
+    backgroundColor: COLORS.ruby,
+    width: "100%",
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+  },
+  iconContainer: {
+    position: "absolute",
+    right: 30,
   },
   btnText: {
     color: "white",
     fontFamily: "UrbanistBold",
-    fontSize: 18,
+    fontSize: 20,
   },
-  skipBtnContainer: {
-    marginTop: 40,
-    height: 54,
-    width: 100,
-    backgroundColor: "white",
-    borderRadius: 24,
-    alignItems: "center",
-    justifyContent: "center",
+  skipBtn: {
+    padding: 10,
+    marginTop: 14,
   },
   skipText: {
-    color: "black",
+    fontSize: 20,
     fontFamily: "UrbanistBold",
-    fontSize: 18,
   },
 });
 

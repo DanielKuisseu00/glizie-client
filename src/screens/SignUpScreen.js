@@ -54,16 +54,13 @@ const SignUpScreen = ({ navigation }) => {
       <SafeAreaView style={styles.container}>
         <TopBar handleNavBack={handleNavBack} />
         <View style={styles.titleWrapper}>
-          <Text style={styles.title}>Let's get you started ❤️</Text>
+          <Text style={styles.title}>Let's get you started</Text>
         </View>
 
         {/* form wrapper */}
         <View style={styles.formWrapper}>
           {/* email input wrapper */}
           <View style={[styles.inputWrapper]}>
-            <View style={styles.iconWrapperInput}>
-              <Icon name="phone" size={20} color="#9E9E9E" />
-            </View>
             <TextInput
               keyboardType="numbers-and-punctuation"
               value={phoneNumber}

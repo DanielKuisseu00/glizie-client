@@ -49,61 +49,58 @@ export default function Banner() {
   }
 
   return (
-    <ScrollView
-      style={{ backgroundColor: "white", paddingBottom: 24 }}
-      showsVerticalScrollIndicator={false}
-    >
-      <FlatList
-        data={bannerSlides}
-        style={styles.scrollView}
-        onMomentumScrollEnd={updateCurrentSlideIndex}
-        keyExtractor={(item) => item.id}
-        horizontal
-        pagingEnabled
-        showsHorizontalScrollIndicator={false}
-        ref={ref}
-        renderItem={({ item }) => {
-          return (
-            <View style={styles.bannerContainer} resizeMode="cover">
-              {/* Banner Image */}
-              <Image
-                style={{ maxWidth: "100%", height: "60%" }}
-                source={item.image}
-                resizeMode={"cover"}
-              />
-              {/* Banner Bottom Container */}
-              <View style={styles.bottomContainer}>
-                <View style={styles.leftBanner}>
-                  <Text style={styles.bannerText}>{item.title}</Text>
-                </View>
-                <View style={styles.rightBanner}>
-                  <Pressable style={styles.bannerBtn}>
-                    <Text style={styles.bannerBtnText}>Shop Now</Text>
-                  </Pressable>
-                </View>
+    <FlatList
+      data={bannerSlides}
+      style={styles.scrollView}
+      onMomentumScrollEnd={updateCurrentSlideIndex}
+      keyExtractor={(item) => item.id}
+      horizontal
+      pagingEnabled
+      showsHorizontalScrollIndicator={false}
+      ref={ref}
+      renderItem={({ item }) => {
+        return (
+          <View style={styles.bannerContainer} resizeMode="cover">
+            {/* Banner Image */}
+            <Image
+              style={{ maxWidth: "100%", height: "60%" }}
+              source={item.image}
+              resizeMode={"cover"}
+            />
+            {/* Banner Bottom Container */}
+            <View style={styles.bottomContainer}>
+              <View style={styles.leftBanner}>
+                <Text style={styles.bannerText}>{item.title}</Text>
+              </View>
+              <View style={styles.rightBanner}>
+                <Pressable style={styles.bannerBtn}>
+                  <Text style={styles.bannerBtnText}>Shop Now</Text>
+                </Pressable>
               </View>
             </View>
-          );
-        }}
-      />
-
-      <View style={styles.progressContainer}>
-        {bannerSlides.map((item, index) => {
-          return (
-            <View
-              key={item.id}
-              style={[
-                styles.progressBubble,
-                currentIndex === index && {
-                  backgroundColor: COLORS.ruby,
-                },
-              ]}
-            />
-          );
-        })}
-      </View>
-    </ScrollView>
+          </View>
+        );
+      }}
+    />
   );
+
+  {
+    /* <View style={styles.progressContainer}>
+      {bannerSlides.map((item, index) => {
+        return (
+          <View
+            key={item.id}
+            style={[
+              styles.progressBubble,
+              currentIndex === index && {
+                backgroundColor: "#2e282a",
+              },
+            ]}
+          />
+        );
+      })}
+    </View> */
+  }
 }
 
 const styles = StyleSheet.create({
@@ -119,7 +116,7 @@ const styles = StyleSheet.create({
   bottomContainer: {
     width: "100%",
     height: "40%",
-    backgroundColor: "white",
+    backgroundColor: "#2e282a",
     flexDirection: "row",
   },
   progressContainer: {
@@ -139,15 +136,16 @@ const styles = StyleSheet.create({
   },
   leftBanner: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#2e282a",
     alignItems: "flex-start",
     justifyContent: "center",
     paddingLeft: 24,
   },
   bannerText: {
     fontFamily: "UrbanistBold",
-    fontSize: 20,
+    fontSize: 18,
     flexWrap: "wrap",
+    color: "white",
   },
   rightBanner: {
     flex: 0.5,
@@ -159,12 +157,12 @@ const styles = StyleSheet.create({
     width: 100,
     padding: 10,
     borderRadius: 20,
-    backgroundColor: COLORS.ruby,
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
   },
   bannerBtnText: {
     fontFamily: "UrbanistBold",
-    color: "white",
+    color: "black",
   },
 });

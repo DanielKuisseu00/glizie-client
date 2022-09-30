@@ -24,6 +24,8 @@ const SignUpScreen = ({ navigation }) => {
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
     UrbanistSemiBold: require("../../assets/fonts/urbanist/Urbanist-SemiBold.ttf"),
     UrbanistRegular: require("../../assets/fonts/urbanist/Urbanist-Regular.ttf"),
+    UrbanistLight: require("../../assets/fonts/urbanist/Urbanist-Light.ttf"),
+    UrbanistExtraLight: require("../../assets/fonts/urbanist/Urbanist-ExtraLight.ttf"),
   });
 
   if (!loaded) {
@@ -35,7 +37,7 @@ const SignUpScreen = ({ navigation }) => {
   };
 
   const handleVerify = () => {
-    navigation.navigate("pin", { dest: "password" });
+    navigation.navigate("pin", { dest: "detail" });
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
   };
 
@@ -62,7 +64,7 @@ const SignUpScreen = ({ navigation }) => {
           {/* email input wrapper */}
           <View style={[styles.inputWrapper]}>
             <TextInput
-              keyboardType="numbers-and-punctuation"
+              keyboardType="number-pad"
               value={phoneNumber}
               onChangeText={(text) => {
                 setPhoneNumber(text);
@@ -82,16 +84,19 @@ const SignUpScreen = ({ navigation }) => {
             <View style={styles.iconWrapper}>
               <Icon name="facebook" color="#2AA4F4" size={35} />
             </View>
+            <Text style={styles.btnText}>Continue with Facebook</Text>
           </View>
           <View style={styles.socialButton}>
             <View style={styles.iconWrapper}>
               <Icon name="google" size={35} />
             </View>
+            <Text style={styles.btnText}>Continue with Google</Text>
           </View>
           <View style={styles.socialButton}>
             <View style={styles.iconWrapper}>
               <Icon name="apple" color="black" size={35} />
             </View>
+            <Text style={styles.btnText}>Continue with Apple</Text>
           </View>
         </View>
       </SafeAreaView>
@@ -135,18 +140,10 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: "100%",
-    fontFamily: "UrbanistSemiBold",
-    fontSize: 14,
+    fontFamily: "UrbanistLight",
+    fontSize: 18,
   },
-  rememberWrapper: {
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-  },
-  rememberText: {
-    fontFamily: "UrbanistSemiBold",
-    fontSize: 14,
-  },
+
   signUpBtn: {
     width: "100%",
     height: 58,
@@ -164,22 +161,29 @@ const styles = StyleSheet.create({
   socialWrapper: {
     alignItems: "center",
     justifyContent: "space-evenly",
-    flexDirection: "row",
+    flexDirection: "column",
   },
   socialButton: {
-    width: 88,
+    width: "80%",
+    marginBottom: 24,
     height: 60,
     borderWidth: 2,
     borderColor: "#EEEEEE",
     borderRadius: 15,
     alignItems: "center",
     justifyContent: "center",
+    flexDirection: "row",
+  },
+  btnText: {
+    fontFamily: "UrbanistSemiBold",
+    fontSize: 16,
   },
   iconWrapper: {
     width: 35,
     height: 35,
     alignItems: "center",
     justifyContent: "center",
+    marginRight: 10,
   },
   iconImg: {
     width: "100%",

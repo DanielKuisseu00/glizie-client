@@ -12,7 +12,7 @@ import { HomeStack } from "./stacks";
 
 const Tab = createBottomTabNavigator();
 
-export default function TabNavigation() {
+export const TabNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -83,4 +83,4 @@ export default function TabNavigation() {
       />
     </Tab.Navigator>
   );
-}
+};

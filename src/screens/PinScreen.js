@@ -51,7 +51,7 @@ const PinScreen = ({ navigation, route }) => {
           styles.OTPInput,
           {
             borderColor: isDigitFocused ? COLORS.ruby : "#EEEEEE",
-            backgroundColor: isDigitFocused ? COLORS.lightRuby : "#FAFAFA",
+            // backgroundColor: isDigitFocused ? COLORS.lightRuby : "#FAFAFA",
           },
         ]}
         key={index}

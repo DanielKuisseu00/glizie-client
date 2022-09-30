@@ -33,7 +33,7 @@ export default function Suggestion({ image, title }) {
 const styles = StyleSheet.create({
   suggestion: {
     width: "48%",
-    backgroundColor: "#d4d4d4",
+    backgroundColor: "#ECECEC",
     height: 60,
     marginBottom: 10,
     marginRight: "2%",
@@ -56,6 +56,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: "UrbanistSemiBold",
-    paddingLeft: 10,
+    paddingLeft: 15,
   },
 });

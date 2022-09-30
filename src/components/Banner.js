@@ -13,6 +13,7 @@ import { COLORS } from "../data/colors";
 import { useFonts } from "expo-font";
 import { bannerSlides } from "../data/bannerSlides";
 import { useInterval } from "react-timing-hooks";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 export default function Banner() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,25 +59,26 @@ export default function Banner() {
       pagingEnabled
       showsHorizontalScrollIndicator={false}
       ref={ref}
+      contentContainerStyle={{
+        alignItems: "center",
+        justifyContent: "space-around",
+      }}
       renderItem={({ item }) => {
         return (
-          <View style={styles.bannerContainer} resizeMode="cover">
-            {/* Banner Image */}
-            <Image
-              style={{ maxWidth: "100%", height: "60%" }}
-              source={item.image}
-              resizeMode={"cover"}
-            />
-            {/* Banner Bottom Container */}
-            <View style={styles.bottomContainer}>
-              <View style={styles.leftBanner}>
-                <Text style={styles.bannerText}>{item.title}</Text>
+          <View style={styles.bannerContainer}>
+            <View style={styles.leftContainer}>
+              <Text style={styles.bannerText}>{item.title}</Text>
+              <View style={styles.subtitleWrapper}>
+                <Text style={styles.bannerSubtitle}>{item.subTitle}</Text>
+                <AntDesign name="arrowright" color={"white"} size={15} />
               </View>
-              <View style={styles.rightBanner}>
-                <Pressable style={styles.bannerBtn}>
-                  <Text style={styles.bannerBtnText}>Shop Now</Text>
-                </Pressable>
-              </View>
+            </View>
+            <View style={styles.rightContainer}>
+              <Image
+                style={styles.bannerImage}
+                source={item.image}
+                resizeMode="cover"
+              />
             </View>
           </View>
         );
@@ -106,12 +108,41 @@ export default function Banner() {
 const styles = StyleSheet.create({
   scrollView: {
     maxWidth: "100%",
+    height: 140,
   },
   bannerContainer: {
-    maxWidth: Dimensions.get("screen").width,
-    height: Dimensions.get("screen").height * 0.25,
-    backgroundColor: "pink",
-    justifyContent: "flex-end",
+    width: Dimensions.get("screen").width,
+    height: 140,
+    flexDirection: "row",
+  },
+  leftContainer: {
+    flex: 1,
+    backgroundColor: "black",
+    justifyContent: "center",
+    paddingLeft: 24,
+  },
+  rightContainer: { flex: 0.5, backgroundColor: "pink" },
+  bannerImage: {
+    maxWidth: "100%",
+    height: "100%",
+  },
+  subtitleWrapper: {
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  bannerText: {
+    fontFamily: "UrbanistBold",
+    fontSize: 20,
+    flexWrap: "wrap",
+    color: "white",
+    marginBottom: 10,
+    lineHeight: 25,
+  },
+  bannerSubtitle: {
+    fontFamily: "UrbanistBold",
+    color: "white",
+    fontSize: 15,
+    marginRight: 10,
   },
   bottomContainer: {
     width: "100%",
@@ -141,12 +172,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingLeft: 24,
   },
-  bannerText: {
-    fontFamily: "UrbanistBold",
-    fontSize: 18,
-    flexWrap: "wrap",
-    color: "white",
-  },
+
   rightBanner: {
     flex: 0.5,
 

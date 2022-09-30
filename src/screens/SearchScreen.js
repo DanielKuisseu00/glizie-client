@@ -58,6 +58,8 @@ export default function SearchScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     marginTop: Platform.OS === "android" ? 25 : 0,
+    backgroundColor: "white",
+    flex: 1,
   },
   searchContainer: {
     borderWidth: 2,

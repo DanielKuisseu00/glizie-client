@@ -14,15 +14,16 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { COLORS } from "../data/colors";
 import * as Haptics from "expo-haptics";
 
-export default function PasswordScreen({ navigation }) {
-  const [password, setPassword] = useState("");
+export default function DetailScreen({ navigation }) {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
   const [retypedPassword, setRetypedPassword] = useState("");
   const [loaded] = useFonts({
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
     UrbanistSemiBold: require("../../assets/fonts/urbanist/Urbanist-SemiBold.ttf"),
     UrbanistRegular: require("../../assets/fonts/urbanist/Urbanist-Regular.ttf"),
     UrbanistMedium: require("../../assets/fonts/urbanist/Urbanist-Medium.ttf"),
-    UrbanistLight: require("../../assets/fonts/urbanist/Urbanist-Light.ttf"),
   });
 
   if (!loaded) {
@@ -49,34 +50,29 @@ export default function PasswordScreen({ navigation }) {
 
         <View style={styles.formContainer}>
           <View style={styles.top}>
-            <Text style={styles.titleText}>Enter Password</Text>
+            <Text style={styles.titleText}>Seems Like you're new 🖐</Text>
+            <Text style={styles.subText}>Tell a litle about yourself</Text>
           </View>
           <View style={styles.inputGroup}>
-            <Icon
-              name="lock-closed"
-              size={20}
-              color="#9E9E9E"
-              style={{ marginRight: 10 }}
-            />
             <TextInput
               style={styles.input}
-              placeholder="Password"
-              secureTextEntry={true}
-              value={password}
-              onChangeText={setPassword}
+              placeholder="First name"
+              value={firstName}
+              onChangeText={setFirstName}
             />
-            <Icon name="eye-off" size={20} color="#9E9E9E" />
           </View>
-          <View style={styles.bottomTextWrapper}>
-            <Text style={styles.bottomText}>cant remember password? </Text>
-            <Pressable onPress={handleForgot}>
-              <Text style={styles.linkText}>Reset</Text>
-            </Pressable>
+          <View style={styles.inputGroup}>
+            <TextInput
+              style={styles.input}
+              placeholder="last name"
+              value={lastName}
+              onChangeText={setLastName}
+            />
           </View>
         </View>
         <View style={styles.buttonContainer}>
           <Pressable style={styles.btn} onPress={handleLogin}>
-            <Text style={styles.btnText}>Login</Text>
+            <Text style={styles.btnText}>Sign up</Text>
           </Pressable>
         </View>
       </SafeAreaView>
@@ -95,7 +91,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     alignItems: "center",
     justifyContent: "center",
-    flex: 0.2,
+    flex: 0.3,
   },
   titleText: {
     fontFamily: "UrbanistBold",
@@ -120,6 +116,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 12,
     paddingHorizontal: 12,
+    marginBottom: 24,
   },
   input: {
     height: 30,

@@ -6,6 +6,7 @@ import IonIcon from "react-native-vector-icons/Ionicons";
 export default function Search({ handlePress }) {
   const [loaded] = useFonts({
     UrbanistRegular: require("../../assets/fonts/urbanist/Urbanist-Regular.ttf"),
+    UrbanistLight: require("../../assets/fonts/urbanist/Urbanist-Light.ttf"),
   });
 
   if (!loaded) {
@@ -17,7 +18,7 @@ export default function Search({ handlePress }) {
         <IonIcon name="search" size={24} />
       </View>
       <Pressable style={styles.textInput} onPress={handlePress}>
-        <Text style={styles.text}>Service, Stylist, or Salon</Text>
+        <Text style={styles.text}>Service, Stylist, or Product</Text>
       </Pressable>
     </View>
   );
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 24,
     paddingHorizontal: 24,
     backgroundColor: "#ededed",
-    borderRadius: 24,
+    borderRadius: 12,
     flexDirection: "row",
     height: 54,
   },
@@ -44,6 +45,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "flex-start",
     justifyContent: "center",
+    fontFamily: "UrbanistBold",
+    fontSize: 18,
   },
   text: {
     fontFamily: "UrbanistRegular",

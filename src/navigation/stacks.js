@@ -11,6 +11,7 @@ import ChangePasswordScreen from "../screens/ChangePasswordScreen";
 import SetupScreen from "../screens/SetupScreen";
 import PasswordScreen from "../screens/PassowrdScreen";
 import DetailScreen from "../screens/DetailScreen";
+import StylistScreen from "../screens/StylistScreen";
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ export const HomeStack = () => {
     >
       <Stack.Screen name="search" component={SearchScreen} />
       <Stack.Screen name="home" component={HomeScreen} />
+      <Stack.Screen name="stylist" component={StylistScreen} />
     </Stack.Navigator>
   );
 };

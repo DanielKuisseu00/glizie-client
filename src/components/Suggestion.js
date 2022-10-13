@@ -34,15 +34,15 @@ const styles = StyleSheet.create({
   suggestion: {
     width: "48%",
     backgroundColor: "#ECECEC",
-    height: 60,
+    height: 120,
     marginBottom: 10,
     marginRight: "2%",
     borderRadius: 10,
-    flexDirection: "row",
+    flexDirection: "column",
     overflow: "hidden",
   },
   imageContainer: {
-    flex: 0.3,
+    flex: 1,
   },
   image: {
     width: "100%",
@@ -50,12 +50,13 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     height: "100%",
-    flex: 1,
+    flex: 0.4,
     alignItems: "flex-start",
     justifyContent: "center",
   },
   text: {
-    fontFamily: "UrbanistSemiBold",
+    fontFamily: "UrbanistBold",
+    fontSize: 18,
     paddingLeft: 15,
   },
 });

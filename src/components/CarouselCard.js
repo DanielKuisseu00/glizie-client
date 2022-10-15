@@ -10,7 +10,7 @@ import React from "react";
 import { useFonts } from "expo-font";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
-const CarouselCard = () => {
+const CarouselCard = ({ item }) => {
   const [loaded] = useFonts({
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
     UrbanistSemiBold: require("../../assets/fonts/urbanist/Urbanist-SemiBold.ttf"),
@@ -24,11 +24,9 @@ const CarouselCard = () => {
   return (
     <View style={styles.promoCard}>
       <View style={styles.darkOverlay}>
-        <View style={styles.left}>
-          <Text style={styles.cardTitle}>
-            $15 off when you spend $80+ on Nails
-          </Text>
-          <Text style={styles.cardSubtitle}>Thru 10/29</Text>
+        <View style={[styles.left, { backgroundColor: item.cardColor }]}>
+          <Text style={styles.cardTitle}>{item.title}</Text>
+          <Text style={styles.cardSubtitle}>{item.subtitle}</Text>
           <View style={styles.bookBtn}>
             <Text style={styles.bookBtnText}>Book Appointment</Text>
             <Icon name="arrow-right" size={12} color="black" />
@@ -38,7 +36,7 @@ const CarouselCard = () => {
           <Image
             style={styles.cardImage}
             source={{
-              uri: "https://images.unsplash.com/photo-1609309267394-9d7b8e01bfe0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+              uri: item.cardImage,
             }}
             resizeMode="cover"
           />

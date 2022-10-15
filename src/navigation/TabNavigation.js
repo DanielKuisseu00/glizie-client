@@ -3,12 +3,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, Text, Platform } from "react-native";
 import AccountScreen from "../screens/AccountScreen";
 import ShopScreen from "../screens/ShopScreen";
-import CartScreen from "../screens/CartScreen";
+import AppointmentScreen from "../screens/AppointmentScreen";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import Entypo from "react-native-vector-icons/Entypo";
 import MaterialICons from "react-native-vector-icons/MaterialCommunityIcons";
 import { COLORS } from "../data/colors";
 import { HomeStack } from "./stacks";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 const Tab = createBottomTabNavigator();
 
@@ -54,14 +55,14 @@ export const TabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="Cart"
-        component={CartScreen}
+        name="Appointment"
+        component={AppointmentScreen}
         options={{
           tabBarIcon: ({ color, size }) => {
             return (
               <View style={{ alignItems: "center", justifyContent: "center" }}>
-                <IonIcon name="ios-cart" color={color} size={size} />
-                <Text style={{ color: color, fontSize: 10 }}>Cart</Text>
+                <FontAwesome name="calendar" color={color} size={size} />
+                <Text style={{ color: color, fontSize: 10 }}>Appointments</Text>
               </View>
             );
           },

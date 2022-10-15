@@ -37,7 +37,7 @@ const SignUpScreen = ({ navigation }) => {
   };
 
   const handleVerify = () => {
-    navigation.navigate("pin", { dest: "detail" });
+    navigation.navigate("pin", { dest: "password" });
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
   };
 

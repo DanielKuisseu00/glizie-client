@@ -17,7 +17,7 @@ const PromoCarousel = () => {
         return item.id;
       }}
       renderItem={({ item }) => {
-        return <CarouselCard />;
+        return <CarouselCard item={item} />;
       }}
       horizontal
       showsHorizontalScrollIndicator={false}

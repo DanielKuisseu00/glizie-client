@@ -66,7 +66,12 @@ export default function Banner() {
       renderItem={({ item }) => {
         return (
           <View style={styles.bannerContainer}>
-            <View style={styles.leftContainer}>
+            <View
+              style={[
+                styles.leftContainer,
+                { backgroundColor: item.bannerBackground },
+              ]}
+            >
               <Text style={styles.bannerText}>{item.title}</Text>
               <View style={styles.subtitleWrapper}>
                 <Text style={styles.bannerSubtitle}>{item.subTitle}</Text>
@@ -85,24 +90,6 @@ export default function Banner() {
       }}
     />
   );
-
-  {
-    /* <View style={styles.progressContainer}>
-      {bannerSlides.map((item, index) => {
-        return (
-          <View
-            key={item.id}
-            style={[
-              styles.progressBubble,
-              currentIndex === index && {
-                backgroundColor: "#2e282a",
-              },
-            ]}
-          />
-        );
-      })}
-    </View> */
-  }
 }
 
 const styles = StyleSheet.create({

@@ -16,19 +16,22 @@ import { useFonts } from "expo-font";
 import * as Haptics from "expo-haptics";
 import PromoCarousel from "../components/PromoCarousel";
 import BottomSheet, {
-  BottomSheetView,
   BottomSheetBackdrop,
+  BottomSheetView,
 } from "@gorhom/bottom-sheet";
+import StylistCarousel from "../components/StylistCarousel";
+import { stylistData } from "../data/stylistData";
 
 const HomeScreen = ({ navigation }) => {
   const [stylist, setStylist] = useState({});
-  const [open, setOpen] = useState(false);
   const sheetRef = useRef(null);
   const snapPoints = ["90%"];
 
   const handleComponent = () => {
     return <View />;
   };
+
+  const handleClose = () => sheetRef.current.close();
 
   const [loaded] = useFonts({
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
@@ -48,6 +51,22 @@ const HomeScreen = ({ navigation }) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     setStylist(stylist);
     sheetRef?.current?.snapToIndex(index);
+  };
+
+  // // callbacks
+  // const handleSheetChanges = (index) => {
+  //   console.log("handleSheetChanges", index);
+  // };
+
+  // renders
+  const renderBackdrop = (props) => {
+    return (
+      <BottomSheetBackdrop
+        {...props}
+        disappearsOnIndex={-1}
+        appearsOnIndex={0}
+      />
+    );
   };
 
   return (
@@ -74,7 +93,7 @@ const HomeScreen = ({ navigation }) => {
             stylist={stylist}
             setStylist={setStylist}
             handleNav={handleNav}
-            limit={2}
+            limit={stylistData.length}
           />
         </SafeAreaView>
       </ScrollView>
@@ -85,9 +104,16 @@ const HomeScreen = ({ navigation }) => {
         handleComponent={handleComponent}
         style={{}}
         enablePanDownToClose={true}
+        backdropComponent={renderBackdrop}
       >
-        <BottomSheetView>
-          <Text>{stylist?.name}</Text>
+        <BottomSheetView
+          style={{
+            overflow: "hidden",
+            borderTopRightRadius: 10,
+            borderTopLeftRadius: 10,
+          }}
+        >
+          <StylistCarousel handleClose={handleClose} stylist={stylist} />
         </BottomSheetView>
       </BottomSheet>
     </View>

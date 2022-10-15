@@ -89,7 +89,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
             style={[
               styles.button,
               {
-                borderColor: numberSelected ? COLORS.ruby : "#757575",
+                borderColor: numberSelected ? COLORS.ruby : "#ebebeb",
               },
             ]}
           >
@@ -112,7 +112,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
               styles.button,
 
               {
-                borderColor: emailSelected ? COLORS.ruby : "#757575",
+                borderColor: emailSelected ? COLORS.ruby : "#ebebeb",
               },
             ]}
           >
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
   icon: {
     width: 80,
     height: 80,
-    backgroundColor: COLORS.lightRuby,
+    backgroundColor: "#ebebeb",
     borderRadius: 100,
     alignItems: "center",
     justifyContent: "center",

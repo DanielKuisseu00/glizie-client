@@ -6,6 +6,7 @@ export const bannerSlides = [
     title: "Get your nails done with us, 30% off the next 24hr",
     subTitle: "Book an appointment",
     id: Math.random() * 10000,
+    bannerBackground: "#d62828",
   },
   {
     image: {
@@ -14,6 +15,7 @@ export const bannerSlides = [
     title: "Get your nails done with us, 30% off the next 24hr",
     subTitle: "Book an appointment",
     id: Math.random() * 10000,
+    bannerBackground: "#03045e",
   },
   {
     image: {
@@ -22,5 +24,6 @@ export const bannerSlides = [
     title: "Get your nails done with us, 30% off the next 24hr",
     subTitle: "Book an appointment",
     id: Math.random() * 10000,
+    bannerBackground: "#390099",
   },
 ];

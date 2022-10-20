@@ -61,6 +61,7 @@ export default function Categories() {
 const styles = StyleSheet.create({
   categoryContainer: {
     height: 150,
+    marginBottom: 24,
   },
   categoryItem: {
     width: 100,

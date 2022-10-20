@@ -10,6 +10,8 @@ import MaterialICons from "react-native-vector-icons/MaterialCommunityIcons";
 import { COLORS } from "../data/colors";
 import { HomeStack } from "./stacks";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import MessagesScreen from "../screens/MessagesScreen";
+import Feather from "react-native-vector-icons/Feather";
 
 const Tab = createBottomTabNavigator();
 
@@ -63,6 +65,20 @@ export const TabNavigation = () => {
               <View style={{ alignItems: "center", justifyContent: "center" }}>
                 <FontAwesome name="calendar" color={color} size={size} />
                 <Text style={{ color: color, fontSize: 10 }}>Appointments</Text>
+              </View>
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Messages"
+        component={MessagesScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => {
+            return (
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <Feather name="message-square" color={color} size={size} />
+                <Text style={{ color: color, fontSize: 10 }}>Chat</Text>
               </View>
             );
           },

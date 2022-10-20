@@ -14,6 +14,21 @@ export const stylistData = [
     rating: 5,
     reviews: 200,
     distance: 2.3,
+    location: "Miami, Florida",
+    services: [
+      { name: "Braids" },
+      { name: "Braids" },
+      { name: "Braids" },
+      { name: "Braids" },
+      { name: "Braids" },
+      { name: "Braids" },
+      { name: "Braids" },
+      { name: "Braids" },
+      { name: "Braids" },
+      { name: "Braids" },
+      { name: "Braids" },
+      { name: "Braids" },
+    ],
   },
   {
     name: "Melonie",
@@ -30,6 +45,8 @@ export const stylistData = [
     rating: 4.9,
     reviews: 200,
     distance: 1,
+    location: "Miami, Florida",
+    services: [{ name: "Braids" }, { name: "Braids" }, { name: "Braids" }],
   },
   {
     name: "Melonie",
@@ -46,6 +63,8 @@ export const stylistData = [
     rating: 4.7,
     reviews: 200,
     distance: 2.1,
+    location: "Miami, Florida",
+    services: [{ name: "Braids" }, { name: "Braids" }, { name: "Braids" }],
   },
   {
     name: "Melonie",
@@ -62,5 +81,7 @@ export const stylistData = [
     rating: 5,
     reviews: 200,
     distance: 3,
+    location: "Miami, Florida",
+    services: [{ name: "Braids" }, { name: "Braids" }, { name: "Braids" }],
   },
 ];

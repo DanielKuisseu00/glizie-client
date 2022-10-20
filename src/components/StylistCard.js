@@ -8,12 +8,15 @@ import {
   Pressable,
   Dimensions,
 } from "react-native";
-import React from "react";
+import Reac, { useState } from "react";
 import { useFonts } from "expo-font";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 const StylistCard = ({ item, handleNav }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const stylist = item;
+
   const [loaded] = useFonts({
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
     UrbanistSemiBold: require("../../assets/fonts/urbanist/Urbanist-SemiBold.ttf"),
@@ -24,6 +27,15 @@ const StylistCard = ({ item, handleNav }) => {
   if (!loaded) {
     return null;
   }
+
+  const width = Dimensions.get("window").width;
+
+  const updateCurrentSlideIndex = (e) => {
+    const contentOffsetX = e.nativeEvent.contentOffset.x;
+    const currentIndex = Math.round(contentOffsetX / width);
+    setCurrentIndex(currentIndex);
+  };
+
   return (
     <View key={item.id} style={styles.itemContainer}>
       {/* Top Section */}
@@ -36,6 +48,7 @@ const StylistCard = ({ item, handleNav }) => {
         </View>
         <View style={styles.imageContainer}>
           <FlatList
+            onMomentumScrollEnd={updateCurrentSlideIndex}
             contentContainerStyle={{
               flexGrow: 1,
             }}
@@ -48,14 +61,37 @@ const StylistCard = ({ item, handleNav }) => {
             }}
             renderItem={({ item }) => {
               return (
-                <Image
-                  style={styles.listImages}
-                  source={{ uri: `${item}` }}
-                  resizeMode="cover"
-                />
+                <Pressable
+                  onPress={() => {
+                    handleNav(0, stylist);
+                  }}
+                >
+                  <Image
+                    style={styles.listImages}
+                    source={{ uri: `${item}` }}
+                    resizeMode="cover"
+                  />
+                </Pressable>
               );
             }}
           />
+          {/* Indicator */}
+          <View style={styles.indicatorWrapper}>
+            {item.images.map((item, index) => {
+              return (
+                <View
+                  key={index}
+                  style={[
+                    styles.indicator,
+                    currentIndex === index && {
+                      backgroundColor: "white",
+                      width: 20,
+                    },
+                  ]}
+                />
+              );
+            })}
+          </View>
         </View>
       </View>
       {/* Bottom Section */}
@@ -104,6 +140,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     borderRadius: 10,
     overflow: "hidden",
+    backgroundColor: "white",
   },
   top: {
     height: "60%",
@@ -156,18 +193,19 @@ const styles = StyleSheet.create({
   leftWrapper: {
     flex: 1,
     paddingTop: 5,
+    paddingLeft: 10,
   },
 
   name: {
     fontFamily: "UrbanistBold",
     fontSize: 20,
-    marginBottom: 5,
+    marginBottom: 3,
   },
   shopName: {
     fontFamily: "UrbanistSemiBold",
     fontSize: 15,
     color: "gray",
-    marginBottom: 5,
+    marginBottom: 3,
   },
   rightWrapper: {
     flex: 0.4,
@@ -192,5 +230,23 @@ const styles = StyleSheet.create({
     color: "white",
     paddingBottom: 5,
     fontSize: 12,
+  },
+  indicatorWrapper: {
+    position: "absolute",
+    zIndex: 3,
+    width: 200,
+    height: 30,
+    bottom: 0,
+    left: 80,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+  },
+  indicator: {
+    width: 8,
+    height: 8,
+    borderRadius: 100,
+    backgroundColor: "#f7f7f7",
+    marginRight: 10,
   },
 });

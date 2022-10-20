@@ -33,6 +33,7 @@ const StylistCarousel = ({ stylist, handleClose }) => {
           horizontal
           showsHorizontalScrollIndicator={false}
           pagingEnabled
+          onTouchStart={() => {}}
           keyExtractor={(item) => {
             return item;
           }}

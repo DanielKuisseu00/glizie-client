@@ -105,7 +105,6 @@ const StylistCard = ({ item, handleNav }) => {
           <Text style={styles.name}>{item.name}</Text>
           <Text style={styles.shopName}>{item.shopName}</Text>
           <Text style={styles.shopName}>{item.distance} mi away</Text>
-          <View></View>
         </View>
         <View style={styles.rightWrapper}>
           <View style={styles.profileWrapper}>
@@ -138,14 +137,21 @@ const styles = StyleSheet.create({
     height: 350,
     width: 340,
     marginBottom: 24,
-    borderRadius: 10,
-    overflow: "hidden",
     backgroundColor: "white",
+    borderRadius: 10,
+    shadowColor: "rgba(0, 0, 0,0.20)",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 5,
   },
   top: {
     height: "60%",
     width: 340,
     flexDirection: "row",
+    overflow: "hidden",
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
   },
   topBar: {
     flexDirection: "row",
@@ -212,6 +218,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "rgba(4, 4, 4, 0.7)",
     paddingTop: 5,
+    borderBottomRightRadius: 10,
+    overflow: "hidden",
   },
   ratingWrapper: {
     flexDirection: "row",

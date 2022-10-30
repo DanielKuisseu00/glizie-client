@@ -21,19 +21,21 @@ import BottomSheet, {
 } from "@gorhom/bottom-sheet";
 import StylistCarousel from "../components/StylistCarousel";
 import { stylistData } from "../data/stylistData";
-import { COLORS } from "../data/colors";
 import BottomSheetBanner from "../components/BottomSheetBanner";
 import BottomSheetContent from "../components/BottomSheetContent";
 import BottomSheetCategories from "./BottomSheetCategories";
+import Services from "../components/Services";
 
 const HomeScreen = ({ navigation }) => {
   const [stylist, setStylist] = useState({});
   const sheetRef = useRef(null);
+  const refScrollView = useRef(null);
   const snapPoints = ["90%"];
   const [category, setCategory] = useState();
+  const [handleCategory, setHandleCategory] = useState(null);
 
   const handleComponent = () => {
-    return <View />;
+    return null;
   };
 
   const handleClose = () => sheetRef.current.close();
@@ -48,6 +50,7 @@ const HomeScreen = ({ navigation }) => {
   if (!loaded) {
     return null;
   }
+
   const handlePress = () => {
     navigation.navigate("search");
   };
@@ -113,6 +116,7 @@ const HomeScreen = ({ navigation }) => {
         backdropComponent={renderBackdrop}
       >
         <BottomSheetScrollView
+          ref={refScrollView}
           contentContainerStyle={{
             overflow: "hidden",
             borderTopRightRadius: 10,
@@ -123,10 +127,11 @@ const HomeScreen = ({ navigation }) => {
           <StylistCarousel handleClose={handleClose} stylist={stylist} />
           <BottomSheetBanner stylist={stylist} />
           <BottomSheetContent />
-          <BottomSheetCategories
-            handleCategorySelection={handleCategorySelection}
-            services={stylist.services}
+          <Services
+            services={stylist?.services}
+            setHandlCategory={setHandleCategory}
             category={category}
+            handleCategorySelection={handleCategorySelection}
           />
         </BottomSheetScrollView>
       </BottomSheet>
@@ -142,7 +147,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "UrbanistBold",
-    fontSize: 30,
+    fontSize: 25,
     marginBottom: 18,
     paddingLeft: 24,
   },

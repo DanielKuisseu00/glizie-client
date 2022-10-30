@@ -27,6 +27,7 @@ const BottomSheetCategories = ({
               paddingBottom: 5,
               justifyContent: "center",
               alignItems: "center",
+              marginBottom: 24,
             }}
           >
             <Text style={styles.categoryTitle}>{item.name}</Text>

@@ -5,7 +5,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 const BottomSheetContent = () => {
   return (
     <View style={styles.contentWrapper}>
-      <View style={[styles.br, { marginBottom: 10 }]}></View>
+      {/* <View style={[styles.br, { marginBottom: 10 }]}></View> */}
       <View style={styles.discountWrapper}>
         <Text style={{ flex: 1 }}>
           <Text style={styles.bold}>Lower Prices.</Text>
@@ -16,7 +16,7 @@ const BottomSheetContent = () => {
           <FontAwesome name="tags" size={30} color={"#32CD32"} />
         </View>
       </View>
-      <View style={[styles.br, { marginBottom: 10 }]}></View>
+      {/* <View style={[styles.br, { marginBottom: 10 }]}></View> */}
     </View>
   );
 };

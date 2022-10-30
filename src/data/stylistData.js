@@ -16,12 +16,162 @@ export const stylistData = [
     distance: 2.3,
     location: "Miami, Florida",
     services: [
-      { name: "Braids" },
-      { name: "Kids" },
-      { name: "Weaves" },
-      { name: "Natural Hair" },
-      { name: "Mens Haircut" },
-      { name: "Fish Bones" },
+      {
+        name: "Braids",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Kids",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Weaves",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Natural Hair",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Mens Haircut",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Fish Bones",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
     ],
   },
   {
@@ -41,12 +191,162 @@ export const stylistData = [
     distance: 1,
     location: "Miami, Florida",
     services: [
-      { name: "Braids" },
-      { name: "Kids" },
-      { name: "Weaves" },
-      { name: "Natural Hair" },
-      { name: "Mens Haircut" },
-      { name: "Fish Bones" },
+      {
+        name: "Braids",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Kids",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Weaves",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Natural Hair",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Mens Haircut",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Fish Bones",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
     ],
   },
   {
@@ -66,12 +366,162 @@ export const stylistData = [
     distance: 2.1,
     location: "Miami, Florida",
     services: [
-      { name: "Braids" },
-      { name: "Kids" },
-      { name: "Weaves" },
-      { name: "Natural Hair" },
-      { name: "Mens Haircut" },
-      { name: "Fish Bones" },
+      {
+        name: "Braids",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Kids",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Weaves",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Natural Hair",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Mens Haircut",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Fish Bones",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
     ],
   },
   {
@@ -91,12 +541,162 @@ export const stylistData = [
     distance: 3,
     location: "Miami, Florida",
     services: [
-      { name: "Braids" },
-      { name: "Kids" },
-      { name: "Weaves" },
-      { name: "Natural Hair" },
-      { name: "Men's Haircut" },
-      { name: "Fish Bones" },
+      {
+        name: "Braids",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Kids",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Weaves",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Natural Hair",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Men's Haircut",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
+      {
+        name: "Fish Bones",
+        subServices: [
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+          {
+            title: "Wash and Blowdry",
+            price: 100.0,
+            description: "Deep wash and conditioning followed with a blow dry",
+            image:
+              "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
+          },
+        ],
+      },
     ],
   },
 ];

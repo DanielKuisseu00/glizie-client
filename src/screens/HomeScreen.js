@@ -25,6 +25,7 @@ import BottomSheetBanner from "../components/BottomSheetBanner";
 import BottomSheetContent from "../components/BottomSheetContent";
 import BottomSheetCategories from "./BottomSheetCategories";
 import Services from "../components/Services";
+import StylistSearchBar from "../components/StylistSearchBar";
 
 const HomeScreen = ({ navigation }) => {
   const [stylist, setStylist] = useState({});
@@ -89,7 +90,7 @@ const HomeScreen = ({ navigation }) => {
           <Banner />
           <Search handlePress={handlePress} />
           <Categories />
-          <PromoCarousel />
+          {/* <PromoCarousel /> */}
           <Text style={styles.title}>Discover Pros</Text>
           <StyleList
             stylist={stylist}
@@ -127,6 +128,7 @@ const HomeScreen = ({ navigation }) => {
           <StylistCarousel handleClose={handleClose} stylist={stylist} />
           <BottomSheetBanner stylist={stylist} />
           <BottomSheetContent />
+          <StylistSearchBar stylistName={stylist.name} />
           <Services
             services={stylist?.services}
             setHandlCategory={setHandleCategory}
@@ -147,7 +149,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "UrbanistBold",
-    fontSize: 25,
+    fontSize: 30,
     marginBottom: 18,
     paddingLeft: 24,
   },

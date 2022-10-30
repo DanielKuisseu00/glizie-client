@@ -12,6 +12,7 @@ import Reac, { useState } from "react";
 import { useFonts } from "expo-font";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import { COLORS } from "../data/colors";
 
 const StylistCard = ({ item, handleNav }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -216,7 +217,7 @@ const styles = StyleSheet.create({
   rightWrapper: {
     flex: 0.4,
     alignItems: "center",
-    backgroundColor: "rgba(4, 4, 4, 0.7)",
+    backgroundColor: COLORS.ruby,
     paddingTop: 5,
     borderBottomRightRadius: 10,
     overflow: "hidden",

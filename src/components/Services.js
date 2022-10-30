@@ -20,80 +20,42 @@ const Services = ({ services, handleCategorySelection, category }) => {
 
   return (
     <View style={styles.wrapper}>
-      {/* Category Flatlist */}
-      <FlatList
-        data={services}
-        horizontal
-        contentContainerStyle={{ paddingLeft: 24 }}
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={(item) => {
-          return item.name;
-        }}
-        renderItem={({ item }) => {
-          return (
-            <Pressable
-              onPress={() => {
-                handleCategorySelection(item);
-              }}
-              style={{
-                borderBottomWidth: 3,
-                borderColor: item === category ? "black" : "#dbdbdb",
-                width: 120,
-                paddingBottom: 5,
-                justifyContent: "center",
-                alignItems: "center",
-                marginBottom: 24,
-              }}
-            >
-              <Text style={styles.categoryTitle}>{item.name}</Text>
-            </Pressable>
-          );
-        }}
-      />
-      {/* Options Flatlist */}
-      <FlatList
-        ref={flatlistRef}
-        data={services}
-        keyExtractor={(item) => {
-          return item.name;
-        }}
-        renderItem={({ item, index }) => {
-          return (
-            <View style={styles.serviceWrapper}>
-              <Text style={styles.title}>{item.name}</Text>
-              {item.subServices.map((subService, index) => {
-                return (
-                  <View key={index} style={styles.subServiceContainer}>
-                    <View style={styles.leftWrapper}>
-                      <Text style={styles.subserviceTitle}>
-                        {subService.title}
-                      </Text>
-                      <Text style={styles.subservicePrice}>
-                        ${subService.price}
-                      </Text>
-                      <Text style={styles.description}>
-                        {subService.description}
-                      </Text>
-                      <View style={styles.btnWrapper}>
-                        <View style={styles.btn}>
-                          <Text style={styles.btnText}>See Times</Text>
-                        </View>
+      {services?.map((item, index) => {
+        return (
+          <View key={index} style={styles.serviceWrapper}>
+            <Text style={styles.title}>{item.name}</Text>
+            {item.subServices.map((subService, index) => {
+              return (
+                <View key={index} style={styles.subServiceContainer}>
+                  <View style={styles.leftWrapper}>
+                    <Text style={styles.subserviceTitle}>
+                      {subService.title}
+                    </Text>
+                    <Text style={styles.subservicePrice}>
+                      ${subService.price}
+                    </Text>
+                    <Text style={styles.description}>
+                      {subService.description}
+                    </Text>
+                    <View style={styles.btnWrapper}>
+                      <View style={styles.btn}>
+                        <Text style={styles.btnText}>See Times</Text>
                       </View>
                     </View>
-                    <View style={styles.rightWrapper}>
-                      <Image
-                        resizeMode="cover"
-                        source={{ uri: subService.image }}
-                        style={styles.subServiceImage}
-                      />
-                    </View>
                   </View>
-                );
-              })}
-            </View>
-          );
-        }}
-      />
+                  <View style={styles.rightWrapper}>
+                    <Image
+                      resizeMode="cover"
+                      source={{ uri: subService.image }}
+                      style={styles.subServiceImage}
+                    />
+                  </View>
+                </View>
+              );
+            })}
+          </View>
+        );
+      })}
     </View>
   );
 };

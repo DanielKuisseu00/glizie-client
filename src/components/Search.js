@@ -26,11 +26,11 @@ export default function Search({ handlePress }) {
       </View>
       <View style={styles.filterWrapper}>
         <Pressable style={[styles.btn, { marginRight: 10 }]}>
-          <Ionicons name="md-map" size={24} />
+          <Ionicons name="md-map" size={20} />
           <Text style={styles.btnText}>Map</Text>
         </Pressable>
         <Pressable style={styles.btn}>
-          <AntDesign name="star" size={24} />
+          <AntDesign name="star" size={20} />
           <Text style={styles.btnText}>Rating</Text>
         </Pressable>
       </View>

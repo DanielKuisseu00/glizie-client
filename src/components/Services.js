@@ -4,7 +4,12 @@ import { useFonts } from "expo-font";
 import { COLORS } from "../data/colors";
 import { FlatList } from "react-native-gesture-handler";
 
-const Services = ({ services, handleCategorySelection, category }) => {
+const Services = ({
+  services,
+  handleCategorySelection,
+  category,
+  navigation,
+}) => {
   let flatlistRef = useRef(3);
 
   const [loaded] = useFonts({
@@ -37,11 +42,11 @@ const Services = ({ services, handleCategorySelection, category }) => {
                     <Text style={styles.description}>
                       {subService.description}
                     </Text>
-                    <View style={styles.btnWrapper}>
+                    <Pressable style={styles.btnWrapper}>
                       <View style={styles.btn}>
                         <Text style={styles.btnText}>See Times</Text>
                       </View>
-                    </View>
+                    </Pressable>
                   </View>
                   <View style={styles.rightWrapper}>
                     <Image

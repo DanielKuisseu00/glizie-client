@@ -12,7 +12,7 @@ function StackNavigator() {
     <NavigationContainer>
       <StatusBar translucent backgroundColor="transparent" />
       <Stack.Navigator
-        initialRouteName="onboarding"
+        initialRouteName="home"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="onboarding" component={OnboardingStack} />

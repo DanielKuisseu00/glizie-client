@@ -103,11 +103,6 @@ const StylistCard = ({ item, handleNav }) => {
         style={styles.bottom}
       >
         <View style={styles.leftWrapper}>
-          <Text style={styles.name}>{item.name}</Text>
-          <Text style={styles.shopName}>{item.shopName}</Text>
-          <Text style={styles.shopName}>{item.distance} mi away</Text>
-        </View>
-        <View style={styles.rightWrapper}>
           <View style={styles.profileWrapper}>
             <Image
               style={styles.profileImg}
@@ -115,16 +110,22 @@ const StylistCard = ({ item, handleNav }) => {
               resizeMode="cover"
             />
           </View>
-          <View style={styles.ratingWrapper}>
-            <AntDesign
-              name="star"
-              size={20}
-              color="white"
-              style={{ marginRight: 5 }}
-            />
-            <Text style={styles.rating}>{item.rating}</Text>
+
+          <View style={styles.detailWrapper}>
+            <Text style={styles.name}>{item.name}</Text>
+            <Text style={styles.shopName}>{item.shopName}</Text>
+            <Text style={styles.shopName}>{item.distance} mi away</Text>
+            <View style={styles.ratingWrapper}>
+              <AntDesign
+                name="star"
+                size={20}
+                color="#ffc400"
+                style={{ marginRight: 5 }}
+              />
+              <Text style={styles.rating}>{item.rating}</Text>
+              <Text style={styles.reviews}>{item.reviews} Reviews</Text>
+            </View>
           </View>
-          <Text style={styles.reviews}>{item.reviews} Reviews</Text>
         </View>
       </Pressable>
     </View>
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   top: {
-    height: "60%",
+    height: "65%",
     width: 340,
     flexDirection: "row",
     overflow: "hidden",
@@ -167,12 +168,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   profileWrapper: {
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 60,
     borderRadius: 80,
     backgroundColor: "white",
     overflow: "hidden",
     marginBottom: 10,
+    borderColor: "teal",
+    marginRight: 24,
   },
   profileImg: {
     width: "100%",
@@ -194,18 +197,25 @@ const styles = StyleSheet.create({
   },
   bottomImg: { flex: 1 },
   bottom: {
-    height: "40%",
+    height: "35%",
     flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
   leftWrapper: {
     flex: 1,
     paddingTop: 5,
     paddingLeft: 10,
+    flexDirection: "row",
+    alignItems: "center",
   },
 
+  detailWrapper: {
+    flex: 1,
+  },
   name: {
     fontFamily: "UrbanistBold",
-    fontSize: 20,
+    fontSize: 25,
     marginBottom: 3,
   },
   shopName: {
@@ -226,19 +236,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    justifyContent: "flex-start",
   },
   rating: {
     fontFamily: "UrbanistSemiBold",
     fontSize: 15,
-    color: "white",
+    color: "black",
   },
   reviews: {
     paddingTop: 5,
     fontFamily: "UrbanistSemiBold",
-    alignSelf: "center",
-    color: "white",
+    color: "black",
     paddingBottom: 5,
-    fontSize: 12,
+    fontSize: 15,
+    marginLeft: 10,
   },
   indicatorWrapper: {
     position: "absolute",

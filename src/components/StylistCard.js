@@ -23,6 +23,7 @@ const StylistCard = ({ item, handleNav }) => {
     UrbanistSemiBold: require("../../assets/fonts/urbanist/Urbanist-SemiBold.ttf"),
     UrbanistRegular: require("../../assets/fonts/urbanist/Urbanist-Regular.ttf"),
     UrbanistMedium: require("../../assets/fonts/urbanist/Urbanist-Medium.ttf"),
+    UrbanistItalic: require("../../assets/fonts/urbanist/Urbanist-Italic.ttf"),
   });
 
   if (!loaded) {
@@ -112,7 +113,14 @@ const StylistCard = ({ item, handleNav }) => {
           </View>
 
           <View style={styles.detailWrapper}>
-            <Text style={styles.name}>{item.name}</Text>
+            <View style={styles.titleWrapper}>
+              <Text style={styles.name}>{item.name}</Text>
+              {stylist.isPro ? (
+                <View style={styles.proWrapper}>
+                  <Text style={styles.proText}>Pro Stylist</Text>
+                </View>
+              ) : null}
+            </View>
             <Text style={styles.shopName}>{item.shopName}</Text>
             <Text style={styles.shopName}>{item.distance} mi away</Text>
             <View style={styles.ratingWrapper}>
@@ -138,14 +146,14 @@ const styles = StyleSheet.create({
   itemContainer: {
     height: 350,
     width: 340,
-    marginBottom: 24,
+    marginBottom: 30,
     backgroundColor: "white",
     borderRadius: 10,
-    shadowColor: "rgba(0, 0, 0,0.20)",
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 5,
+    // shadowColor: "rgba(0, 0, 0,0.20)",
+    // shadowOffset: { width: 0, height: 1 },
+    // shadowOpacity: 0.8,
+    // shadowRadius: 2,
+    // elevation: 5,
   },
   top: {
     height: "65%",
@@ -166,6 +174,23 @@ const styles = StyleSheet.create({
   },
   leftBar: {
     flex: 1,
+  },
+  titleWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  proWrapper: {
+    backgroundColor: COLORS.ruby,
+    width: 100,
+    height: 30,
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  proText: {
+    fontFamily: "UrbanistBold",
+    color: "white",
+    fontSize: 15,
   },
   profileWrapper: {
     width: 60,
@@ -217,6 +242,7 @@ const styles = StyleSheet.create({
     fontFamily: "UrbanistBold",
     fontSize: 25,
     marginBottom: 3,
+    marginRight: 30,
   },
   shopName: {
     fontFamily: "UrbanistSemiBold",
@@ -246,7 +272,7 @@ const styles = StyleSheet.create({
   reviews: {
     paddingTop: 5,
     fontFamily: "UrbanistSemiBold",
-    color: "black",
+    color: "gray",
     paddingBottom: 5,
     fontSize: 15,
     marginLeft: 10,

@@ -62,6 +62,11 @@ const HomeScreen = ({ navigation }) => {
     sheetRef?.current?.snapToIndex(index);
   };
 
+  const handleSeeTimes = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    navigation.navigate("seeTime");
+  };
+
   // renders
   const renderBackdrop = (props) => {
     return (
@@ -134,6 +139,7 @@ const HomeScreen = ({ navigation }) => {
             setHandlCategory={setHandleCategory}
             category={category}
             handleCategorySelection={handleCategorySelection}
+            handleSeeTimes={handleSeeTimes}
           />
         </BottomSheetScrollView>
       </BottomSheet>

@@ -9,6 +9,7 @@ const Services = ({
   handleCategorySelection,
   category,
   navigation,
+  handleSeeTimes,
 }) => {
   let flatlistRef = useRef(3);
 
@@ -42,7 +43,10 @@ const Services = ({
                     <Text style={styles.description}>
                       {subService.description}
                     </Text>
-                    <Pressable style={styles.btnWrapper}>
+                    <Pressable
+                      onPress={handleSeeTimes}
+                      style={styles.btnWrapper}
+                    >
                       <View style={styles.btn}>
                         <Text style={styles.btnText}>See Times</Text>
                       </View>

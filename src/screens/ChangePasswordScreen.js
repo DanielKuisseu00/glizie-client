@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import {
   KeyboardAvoidingView,
   Pressable,
-  SafeAreaView,
   StyleSheet,
   Text,
   View,
+  SafeAreaView,
 } from "react-native";
 import TopBar from "../components/TopBar";
 import { useFonts } from "expo-font";

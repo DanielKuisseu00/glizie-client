@@ -1,12 +1,12 @@
 import React, { useState, useRef, useCallback } from "react";
 import {
   StyleSheet,
-  SafeAreaView,
   Platform,
   ScrollView,
   StatusBar,
   Text,
   View,
+  SafeAreaView,
 } from "react-native";
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";

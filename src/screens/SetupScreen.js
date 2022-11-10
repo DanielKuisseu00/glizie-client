@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import {
   Platform,
-  SafeAreaView,
   StyleSheet,
   Text,
   View,
   TextInput,
   Pressable,
+  SafeAreaView,
 } from "react-native";
 import TopBar from "../components/TopBar";
 import { useFonts } from "expo-font";

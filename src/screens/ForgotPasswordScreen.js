@@ -3,11 +3,11 @@ import {
   Image,
   Platform,
   Pressable,
-  SafeAreaView,
   StatusBar,
   StyleSheet,
   Text,
   View,
+  SafeAreaView,
 } from "react-native";
 import TopBar from "../components/TopBar";
 import { useFonts } from "expo-font";

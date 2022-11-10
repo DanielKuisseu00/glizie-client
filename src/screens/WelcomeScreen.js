@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  SafeAreaView,
   StyleSheet,
   Text,
   View,
@@ -8,6 +7,7 @@ import {
   Pressable,
   ImageBackground,
   StatusBar,
+  SafeAreaView,
 } from "react-native";
 import { useFonts } from "expo-font";
 import * as Haptics from "expo-haptics";

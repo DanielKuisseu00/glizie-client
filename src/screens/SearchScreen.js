@@ -1,12 +1,12 @@
 import React from "react";
 import {
-  SafeAreaView,
   StyleSheet,
   Text,
   Platform,
   View,
   TextInput,
   Image,
+  SafeAreaView,
 } from "react-native";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import TopBar from "../components/TopBar";

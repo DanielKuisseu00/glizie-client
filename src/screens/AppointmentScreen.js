@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, Text } from "react-native";
+import { Text, SafeAreaView } from "react-native";
 
 export default function AppointmentScreen() {
   return (

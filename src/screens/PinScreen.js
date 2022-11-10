@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  SafeAreaView,
   StyleSheet,
   View,
   Text,
@@ -8,6 +7,7 @@ import {
   TextInput,
   Pressable,
   KeyboardAvoidingView,
+  SafeAreaView,
 } from "react-native";
 import { useFonts } from "expo-font";
 import TopBar from "../components/TopBar";

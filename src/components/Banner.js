@@ -98,9 +98,12 @@ const styles = StyleSheet.create({
     height: 140,
   },
   bannerContainer: {
-    width: Dimensions.get("screen").width,
+    width: Dimensions.get("screen").width * 0.95,
+    marginHorizontal: Dimensions.get("screen").width * 0.025,
     height: 140,
     flexDirection: "row",
+    borderRadius: 10,
+    overflow: "hidden",
   },
   leftContainer: {
     flex: 1,

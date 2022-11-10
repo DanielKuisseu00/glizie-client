@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Platform, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View, SafeAreaView } from "react-native";
 import TopBar from "../components/TopBar";
 import { Calendar } from "react-native-calendars";
 import moment from "moment";

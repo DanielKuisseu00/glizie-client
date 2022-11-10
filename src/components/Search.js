@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { useFonts } from "expo-font";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import Foundation from "react-native-vector-icons/Foundation";
 
 export default function Search({ handlePress }) {
   const [loaded] = useFonts({
@@ -30,8 +30,8 @@ export default function Search({ handlePress }) {
           <Text style={styles.btnText}>Map</Text>
         </Pressable>
         <Pressable style={styles.btn}>
-          <AntDesign name="star" size={20} />
-          <Text style={styles.btnText}>Rating</Text>
+          <Foundation name="filter" size={20} />
+          <Text style={styles.btnText}>Sort</Text>
         </Pressable>
       </View>
     </View>

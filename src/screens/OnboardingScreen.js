@@ -3,10 +3,10 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
   Dimensions,
   Platform,
   Pressable,
+  SafeAreaView,
 } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import Slide from "../components/Slide";

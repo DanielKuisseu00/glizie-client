@@ -5,11 +5,14 @@ import { Calendar } from "react-native-calendars";
 import moment from "moment";
 import { COLORS } from "../data/colors";
 import { useFonts } from "expo-font";
+import { render } from "react-dom";
+import { FlatList } from "react-native-gesture-handler";
 
-const SetDateScreen = ({ navigation }) => {
-  const [selectedDay, setSelectedDay] = useState("");
-
+const SetDateScreen = ({ navigation, route }) => {
   const today = moment().format("YYYY-MM-DD");
+  const { hoursAvaiable } = route.params;
+
+  const [selectedDay, setSelectedDay] = useState("");
 
   const [loaded] = useFonts({
     UrbanistBold: require("../../assets/fonts/urbanist/Urbanist-Bold.ttf"),
@@ -66,6 +69,31 @@ const SetDateScreen = ({ navigation }) => {
         }}
         hideExtraDays={true}
       />
+
+      <Text style={[styles.title, { marginTop: 15, marginBottom: 15 }]}>
+        Pick an hour
+      </Text>
+
+      <View style={styles.hourPickerWrapper}>
+        <FlatList
+          data={hoursAvaiable}
+          keyExtractor={(item) => {
+            return item.time;
+          }}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }) => {
+            return (
+              <View style={styles.timeContainer}>
+                <Text style={styles.timeContainerText}>{item.time}</Text>
+              </View>
+            );
+          }}
+        />
+      </View>
+      <Text style={[styles.title, { marginTop: 15, marginBottom: 15 }]}>
+        Reviews
+      </Text>
     </SafeAreaView>
   );
 };
@@ -81,5 +109,22 @@ const styles = StyleSheet.create({
     marginLeft: 24,
     marginBottom: 15,
     fontSize: 24,
+  },
+  hourPickerWrapper: {
+    width: "100%",
+    height: 40,
+    marginTop: 0,
+  },
+  timeContainer: {
+    width: 100,
+    height: "100%",
+    backgroundColor: "#d2d2d4",
+    marginHorizontal: 24,
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  timeContainerText: {
+    fontFamily: "UrbanistRegular",
   },
 });

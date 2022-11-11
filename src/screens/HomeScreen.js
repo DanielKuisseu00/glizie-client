@@ -64,7 +64,7 @@ const HomeScreen = ({ navigation }) => {
 
   const handleSeeTimes = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    navigation.navigate("seeTime");
+    navigation.navigate("seeTime", { hoursAvaiable: stylist.hoursAvaiable });
   };
 
   // renders

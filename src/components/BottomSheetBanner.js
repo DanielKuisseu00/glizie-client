@@ -5,6 +5,7 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const BottomSheetBanner = ({ stylist }) => {
+  console.log(stylist);
   return (
     <View style={styles.bannerWrapper}>
       <View style={styles.avatarWrapper}>
@@ -23,7 +24,9 @@ const BottomSheetBanner = ({ stylist }) => {
               <Text style={styles.rating}>{stylist.rating}</Text>
             </View>
             <View style={styles.reviewWrapper}>
-              <Text style={styles.reviews}>{stylist.reviews} reviews</Text>
+              <Text style={styles.reviews}>
+                {stylist?.reviews?.length} reviews
+              </Text>
             </View>
             <View style={styles.topStylistWrapper}>
               <MaterialCommunityIcons

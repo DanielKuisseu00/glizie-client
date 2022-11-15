@@ -48,7 +48,7 @@ const Services = ({
                       style={styles.btnWrapper}
                     >
                       <View style={styles.btn}>
-                        <Text style={styles.btnText}>See Times</Text>
+                        <Text style={styles.btnText}>More Info</Text>
                       </View>
                     </Pressable>
                   </View>

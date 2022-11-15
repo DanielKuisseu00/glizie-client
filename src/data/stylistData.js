@@ -14,8 +14,27 @@ export const stylistData = [
     hoursOpen: "9:00AM - 12:00PM",
     isPro: true,
     id: Math.random(100000),
-    rating: 5,
-    reviews: 200,
+    rating: 4.7,
+    reviews: [
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+    ],
     distance: 2.3,
     location: "Miami, Florida",
     hoursAvaiable: [
@@ -215,9 +234,28 @@ export const stylistData = [
     isPro: true,
     id: Math.random(100000),
     rating: 4.9,
-    reviews: 200,
     distance: 1,
     location: "Miami, Florida",
+    reviews: [
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+    ],
     hoursAvaiable: [
       { time: moment("12:00 AM", "hh:mm A").format("h:mm A"), avaiable: true },
       { time: moment("1:00 AM", "hh:mm A").format("h:mm A"), avaiable: false },
@@ -415,9 +453,28 @@ export const stylistData = [
     id: Math.random(100000),
     rating: 4.7,
     isPro: false,
-    reviews: 200,
     distance: 2.1,
     location: "Miami, Florida",
+    reviews: [
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+    ],
     hoursAvaiable: [
       { time: moment("12:00 AM", "hh:mm A").format("h:mm A"), avaiable: true },
       { time: moment("1:00 AM", "hh:mm A").format("h:mm A"), avaiable: false },
@@ -615,9 +672,28 @@ export const stylistData = [
     id: Math.random(100000),
     rating: 5,
     isPro: false,
-    reviews: 200,
     distance: 3,
     location: "Miami, Florida",
+    reviews: [
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+      {
+        name: "meme",
+        comment: "Melonie was very nice and profesional.",
+        avatar:
+          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+      },
+    ],
     hoursAvaiable: [
       { time: moment("12:00 AM", "hh:mm A").format("h:mm A"), avaiable: true },
       { time: moment("1:00 AM", "hh:mm A").format("h:mm A"), avaiable: false },

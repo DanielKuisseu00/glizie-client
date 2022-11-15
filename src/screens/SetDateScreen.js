@@ -6,7 +6,7 @@ import moment from "moment";
 import { COLORS } from "../data/colors";
 import { useFonts } from "expo-font";
 import { render } from "react-dom";
-import { FlatList } from "react-native-gesture-handler";
+import { FlatList, ScrollView } from "react-native-gesture-handler";
 
 const SetDateScreen = ({ navigation, route }) => {
   const today = moment().format("YYYY-MM-DD");
@@ -31,69 +31,71 @@ const SetDateScreen = ({ navigation, route }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TopBar handleNavBack={handleNavBack} />
-      <Text style={styles.title}>Pick a date</Text>
-      <Calendar
-        style={{ width: "90%", alignSelf: "center", borderRadius: 10 }}
-        // initialDate={moment().format("YYYY-MM-DD")}
-        enableSwipeMonths={true}
-        onDayPress={(day) => {
-          setSelectedDay(day.dateString);
-        }}
-        markedDates={{
-          [selectedDay]: {
-            marked: false,
-            selected: true,
-            selectedColor: "white",
-            dotColor: "black",
-            selectedTextColor: "black",
-          },
-        }}
-        minDate={today}
-        theme={{
-          calendarBackground: COLORS.ruby,
-
-          selectedDayBackgroundColor: COLORS.ruby,
-          selectedDayTextColor: "white",
-          selectedDotColor: "#166088",
-
-          dayTextColor: "white",
-          textDisabledColor: "gray",
-          dotColor: "#DBE9EE",
-
-          monthTextColor: "#DBE9EE",
-          textMonthFontWeight: "bold",
-          textMonthFontFamily: "UrbanistBold",
-
-          arrowColor: "white",
-        }}
-        hideExtraDays={true}
-      />
-
-      <Text style={[styles.title, { marginTop: 15, marginBottom: 15 }]}>
-        Pick an hour
-      </Text>
-
-      <View style={styles.hourPickerWrapper}>
-        <FlatList
-          data={hoursAvaiable}
-          keyExtractor={(item) => {
-            return item.time;
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <TopBar handleNavBack={handleNavBack} />
+        <Text style={styles.title}>Pick a date</Text>
+        <Calendar
+          style={{ width: "90%", alignSelf: "center", borderRadius: 10 }}
+          // initialDate={moment().format("YYYY-MM-DD")}
+          enableSwipeMonths={true}
+          onDayPress={(day) => {
+            setSelectedDay(day.dateString);
           }}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => {
-            return (
-              <View style={styles.timeContainer}>
-                <Text style={styles.timeContainerText}>{item.time}</Text>
-              </View>
-            );
+          markedDates={{
+            [selectedDay]: {
+              marked: false,
+              selected: true,
+              selectedColor: "white",
+              dotColor: "black",
+              selectedTextColor: "black",
+            },
           }}
+          minDate={today}
+          theme={{
+            calendarBackground: COLORS.ruby,
+
+            selectedDayBackgroundColor: COLORS.ruby,
+            selectedDayTextColor: "white",
+            selectedDotColor: "#166088",
+
+            dayTextColor: "white",
+            textDisabledColor: "gray",
+            dotColor: "#DBE9EE",
+
+            monthTextColor: "#DBE9EE",
+            textMonthFontWeight: "bold",
+            textMonthFontFamily: "UrbanistBold",
+
+            arrowColor: "white",
+          }}
+          hideExtraDays={true}
         />
-      </View>
-      <Text style={[styles.title, { marginTop: 15, marginBottom: 15 }]}>
-        Reviews
-      </Text>
+
+        <Text style={[styles.title, { marginTop: 15, marginBottom: 15 }]}>
+          Pick an hour
+        </Text>
+
+        <View style={styles.hourPickerWrapper}>
+          <FlatList
+            data={hoursAvaiable}
+            keyExtractor={(item) => {
+              return item.time;
+            }}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item }) => {
+              return (
+                <View style={styles.timeContainer}>
+                  <Text style={styles.timeContainerText}>{item.time}</Text>
+                </View>
+              );
+            }}
+          />
+        </View>
+        <View style={styles.commentWrapper}>
+          <View style={styles.titleWrapper}></View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -103,6 +105,8 @@ export default SetDateScreen;
 const styles = StyleSheet.create({
   container: {
     paddingTop: Platform.OS === "android" ? 20 : 0,
+    backgroundColor: "white",
+    flex: 1,
   },
   title: {
     fontFamily: "UrbanistBold",
@@ -127,4 +131,6 @@ const styles = StyleSheet.create({
   timeContainerText: {
     fontFamily: "UrbanistRegular",
   },
+  commentWrapper: {},
+  titleWrapper: {},
 });

@@ -131,7 +131,7 @@ const StylistCard = ({ item, handleNav }) => {
                 style={{ marginRight: 5 }}
               />
               <Text style={styles.rating}>{item.rating}</Text>
-              <Text style={styles.reviews}>{item.reviews} Reviews</Text>
+              <Text style={styles.reviews}>{item.reviews?.length} Reviews</Text>
             </View>
           </View>
         </View>
@@ -149,11 +149,6 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     backgroundColor: "white",
     borderRadius: 10,
-    // shadowColor: "rgba(0, 0, 0,0.20)",
-    // shadowOffset: { width: 0, height: 1 },
-    // shadowOpacity: 0.8,
-    // shadowRadius: 2,
-    // elevation: 5,
   },
   top: {
     height: "65%",

@@ -18,21 +18,24 @@ export const stylistData = [
     reviews: [
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
     ],
     distance: 2.3,
@@ -239,21 +242,24 @@ export const stylistData = [
     reviews: [
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
     ],
     hoursAvaiable: [
@@ -458,21 +464,24 @@ export const stylistData = [
     reviews: [
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
     ],
     hoursAvaiable: [
@@ -677,21 +686,24 @@ export const stylistData = [
     reviews: [
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
       {
         name: "meme",
+        date: moment(),
         comment: "Melonie was very nice and profesional.",
         avatar:
-          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+          "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       },
     ],
     hoursAvaiable: [

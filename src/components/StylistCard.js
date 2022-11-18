@@ -87,7 +87,7 @@ const StylistCard = ({ item, handleNav }) => {
                     styles.indicator,
                     currentIndex === index && {
                       backgroundColor: "white",
-                      width: 20,
+                      width: 50,
                     },
                   ]}
                 />
@@ -284,10 +284,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   indicator: {
-    width: 8,
-    height: 8,
+    width: 40,
+    height: 4,
     borderRadius: 100,
-    backgroundColor: "#f7f7f7",
+    backgroundColor: "rgba(255, 255, 255, 0.3)",
     marginRight: 10,
   },
 });

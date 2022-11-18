@@ -5,7 +5,6 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const BottomSheetBanner = ({ stylist }) => {
-  console.log(stylist);
   return (
     <View style={styles.bannerWrapper}>
       <View style={styles.avatarWrapper}>

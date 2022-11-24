@@ -51,7 +51,7 @@ export default CarouselCard;
 const styles = StyleSheet.create({
   promoCard: {
     width: 300,
-    height: 150,
+    height: 130,
     backgroundColor: "teal",
     borderRadius: 10,
     overflow: "hidden",

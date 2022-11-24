@@ -13,6 +13,7 @@ import PasswordScreen from "../screens/PassowrdScreen";
 import DetailScreen from "../screens/DetailScreen";
 import StylistScreen from "../screens/StylistScreen";
 import SetDateScreen from "../screens/SetDateScreen";
+import AppointmentCartScreen from "../screens/AppointmentCartScreen";
 
 const Stack = createStackNavigator();
 
@@ -26,6 +27,7 @@ export const HomeStack = () => {
       <Stack.Screen name="home" component={HomeScreen} />
       <Stack.Screen name="stylist" component={StylistScreen} />
       <Stack.Screen name="seeTime" component={SetDateScreen} />
+      <Stack.Screen name="AppointmentCart" component={AppointmentCartScreen} />
     </Stack.Navigator>
   );
 };

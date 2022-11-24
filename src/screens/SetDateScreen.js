@@ -17,10 +17,11 @@ import { useFonts } from "expo-font";
 import { render } from "react-dom";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 import AntDesign from "react-native-vector-icons/AntDesign";
+import * as Haptics from "expo-haptics";
 
-LogBox.ignoreWarnings([
-  "Non-serializable values were found in the navigation state",
-]);
+// LogBox.ignoreWarnings([
+//   "Non-serializable values were found in the navigation state",
+// ]);
 
 const SetDateScreen = ({ navigation, route }) => {
   const today = moment().format("YYYY-MM-DD");
@@ -39,16 +40,27 @@ const SetDateScreen = ({ navigation, route }) => {
   }
 
   const handleNavBack = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     navigation.pop();
+  };
+
+  const handleCheckout = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    navigation.navigate("AppointmentCart");
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <TopBar handleNavBack={handleNavBack} />
-        <Text style={styles.title}>Pick a date</Text>
+        <TopBar handleNavBack={handleNavBack} topBarText="Pick a date" />
+        {/* <Text style={styles.title}>Pick a date</Text> */}
         <Calendar
-          style={{ width: "90%", alignSelf: "center", borderRadius: 10 }}
+          style={{
+            width: "90%",
+            alignSelf: "center",
+            borderRadius: 10,
+            marginTop: 20,
+          }}
           // initialDate={moment().format("YYYY-MM-DD")}
           enableSwipeMonths={true}
           onDayPress={(day) => {
@@ -107,7 +119,7 @@ const SetDateScreen = ({ navigation, route }) => {
         </View>
 
         <View style={styles.reserveBtnWrapper}>
-          <Pressable style={styles.reserveBtn}>
+          <Pressable onPress={handleCheckout} style={styles.reserveBtn}>
             <Text style={styles.reserveBtnText}>Reserve</Text>
           </Pressable>
         </View>
@@ -170,7 +182,7 @@ export default SetDateScreen;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "android" ? 20 : 0,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
     backgroundColor: "white",
     flex: 1,
   },
@@ -245,7 +257,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#d9d9d9",
     marginTop: 24,
-    marginRight: 15,
+    marginRight: 20,
     borderRadius: 5,
   },
   reviewDataWrapper: {

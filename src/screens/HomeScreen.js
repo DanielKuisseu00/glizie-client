@@ -99,7 +99,7 @@ const HomeScreen = ({ navigation }) => {
           <Banner />
           <Search handlePress={handlePress} />
           <Categories />
-          {/* <PromoCarousel /> */}
+          <PromoCarousel />
           <Text style={styles.title}>Discover Pros</Text>
           <StyleList
             stylist={stylist}
@@ -107,7 +107,7 @@ const HomeScreen = ({ navigation }) => {
             handleNav={handleNav}
             limit={2}
           />
-          <PromoCarousel />
+          {/* <PromoCarousel /> */}
           <StyleList
             stylist={stylist}
             setStylist={setStylist}

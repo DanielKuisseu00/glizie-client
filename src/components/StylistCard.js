@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   itemContainer: {
     height: 350,
     width: 340,
-    marginBottom: 30,
+    marginBottom: 40,
     backgroundColor: "white",
     borderRadius: 10,
   },

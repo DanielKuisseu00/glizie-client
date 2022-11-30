@@ -36,6 +36,9 @@ const CartCard = () => {
             <Text style={styles.ratingText}>5.00</Text>
             <Text style={styles.reviewText}>(3)</Text>
           </View>
+          <View style={styles.proWrapper}>
+            <Text style={styles.proText}>Pro Stylist</Text>
+          </View>
         </View>
       </View>
     </View>
@@ -91,7 +94,6 @@ const styles = StyleSheet.create({
   },
   ratingWrapper: {
     flexDirection: "row",
-    borderWidth: 1,
     alignItems: "center",
   },
   ratingText: {
@@ -103,5 +105,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#7f8282",
     marginLeft: 7,
+  },
+  proWrapper: {
+    backgroundColor: COLORS.ruby,
+    width: 100,
+    height: 30,
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: 30,
+  },
+  proText: {
+    fontFamily: "UrbanistBold",
+    color: "white",
+    fontSize: 15,
   },
 });

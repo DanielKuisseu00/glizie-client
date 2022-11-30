@@ -203,6 +203,7 @@ const styles = StyleSheet.create({
   reserveBtnText: {
     color: "white",
     fontFamily: "UrbanistBold",
+    fontSize: 18,
   },
   title: {
     fontFamily: "UrbanistBold",

@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Platform,
   Image,
+  Pressable,
 } from "react-native";
 import React from "react";
 import { ScrollView } from "react-native-gesture-handler";
@@ -14,6 +15,7 @@ import { useFonts } from "expo-font";
 import CartCard from "../components/CartCard";
 import { COLORS } from "../data/colors";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import Entypo from "react-native-vector-icons/Entypo";
 
 const AppointmentCartScreen = ({ navigation }) => {
   const [loaded] = useFonts({
@@ -83,8 +85,9 @@ const AppointmentCartScreen = ({ navigation }) => {
 
           <View style={styles.payChoiceWrapper}>
             <View style={styles.choiceLeftWrapper}>
-              <Text style={styles.choiceTitle}>Pay in full</Text>
-              {/* <Text style={styles.choiceSubTitle}>Pay in full</Text> */}
+              <Text style={styles.choiceTitle}>
+                Pay in full when appointment is complete.
+              </Text>
             </View>
             <View style={styles.choiceRightWrapper}>
               <MaterialIcons name="radio-button-on" size={30} />
@@ -95,8 +98,12 @@ const AppointmentCartScreen = ({ navigation }) => {
 
           <View style={styles.payChoiceWrapper}>
             <View style={styles.choiceLeftWrapper}>
-              <Text style={styles.choiceTitle}>Pay in parts with Klarna</Text>
-              {/* <Text style={styles.choiceSubTitle}>Pay in full</Text> */}
+              <View style={styles.leftChoiceWrapper}>
+                <Text style={styles.choiceTitle}>
+                  Or 4 interest free payments of $27.50 with{" "}
+                  <Text style={styles.klarnaText}>Klarna.</Text>
+                </Text>
+              </View>
             </View>
             <View style={styles.choiceRightWrapper}>
               <MaterialIcons name="radio-button-off" size={30} />
@@ -143,7 +150,34 @@ const AppointmentCartScreen = ({ navigation }) => {
 
         {/* Payment Choice section */}
 
-        <View style={styles.payWithSection}></View>
+        <View style={styles.payWithSection}>
+          <Text style={styles.chooseHowToPayText}>Pay With</Text>
+          <View style={styles.cardWrapper}>
+            <View style={styles.cardTypeWrapper}>
+              <Image
+                style={styles.cardTypeImage}
+                source={{
+                  uri: "https://1000logos.net/wp-content/uploads/2021/11/VISA-logo.png",
+                }}
+                resizeMode={"contain"}
+              />
+            </View>
+            <View style={styles.cardNumberTextWrapper}>
+              <Entypo name="dots-two-horizontal" size={20} />
+              <Entypo
+                name="dots-two-horizontal"
+                size={20}
+                style={{ marginLeft: -4 }}
+              />
+              {/* <Entypo name="dots-two-horizontal" size={20} />
+                <Entypo name="dots-two-horizontal" size={20} /> */}
+              <Text style={styles.cardNumberText}> 2427</Text>
+            </View>
+            <Pressable style={styles.editCardBtn}>
+              <Text style={styles.editBtnText}>Edit</Text>
+            </Pressable>
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -156,7 +190,7 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === "android" ? 25 : 0,
     backgroundColor: "#ffffff",
     flex: 1,
-    paddingBottom: Platform.OS === "android" ? 20 : 0,
+    // paddingBottom: Platform.OS === "android" ? 20 : 0,
   },
   title: {
     fontFamily: "UrbanistBold",
@@ -231,10 +265,11 @@ const styles = StyleSheet.create({
   },
   choiceLeftWrapper: {
     flex: 1,
+    flexDirection: "row",
   },
   choiceTitle: {
-    fontFamily: "UrbanistBlack",
-    fontSize: 20,
+    fontFamily: "UrbanistRegular",
+    fontSize: 16,
   },
   choiceSubTitle: {
     marginTop: 7,
@@ -258,5 +293,58 @@ const styles = StyleSheet.create({
   },
   itemName: { fontFamily: "UrbanistRegular", fontSize: 16 },
   price: { fontFamily: "UrbanistRegular", fontSize: 16 },
-  payWithSection: {},
+  payWithSection: {
+    marginTop: 24,
+    paddingHorizontal: 24,
+  },
+  klarnaText: {
+    fontFamily: "UrbanistBold",
+    color: "#f7afc4",
+    fontSize: 16,
+    paddingLeft: 10,
+  },
+  // set up wrapper for both sides so that words dont wrap
+  leftChoiceWrapper: {
+    flex: 1,
+  },
+  rightChoiceWrapper: {
+    flex: 0.2,
+    borderWidth: 1,
+  },
+  cardWrapper: {
+    marginTop: 20,
+    flexDirection: "row",
+  },
+  cardTypeWrapper: {
+    borderWidth: 1,
+    borderColor: "gray",
+    height: 30,
+    width: 60,
+    flexDirection: "row",
+  },
+  cardTypeImage: {
+    width: "100%",
+    height: "100%",
+  },
+  cardNumberTextWrapper: {
+    marginLeft: 24,
+    alignItems: "center",
+    justifyContent: "center",
+    width: 100,
+    flexDirection: "row",
+  },
+  cardNumberText: {
+    fontFamily: "UrbanistRegular",
+    fontSize: 18,
+  },
+  editCardBtn: {
+    flex: 1,
+    alignItems: "flex-end",
+    justifyContent: "center",
+  },
+  editBtnText: {
+    fontFamily: "UrbanistBold",
+    fontSize: 18,
+    textDecorationLine: "underline",
+  },
 });

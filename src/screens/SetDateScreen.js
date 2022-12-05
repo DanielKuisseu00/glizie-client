@@ -46,7 +46,7 @@ const SetDateScreen = ({ navigation, route }) => {
 
   const handleCheckout = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    navigation.navigate("AppointmentCart");
+    navigation.navigate("AppointmentCart", { stylist: stylist });
   };
 
   return (

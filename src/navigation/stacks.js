@@ -20,7 +20,7 @@ const Stack = createStackNavigator();
 export const HomeStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="AppointmentCart"
+      initialRouteName="home"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="search" component={SearchScreen} />

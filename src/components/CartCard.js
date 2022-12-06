@@ -29,7 +29,7 @@ const CartCard = () => {
       </View>
       <View style={styles.cardDetailsWrapper}>
         <Text style={styles.itemTitle}>Lace Front Install</Text>
-        <Text style={styles.itemDetails}>$120.00</Text>
+        <Text style={styles.itemDetails}>10 : 00 AM</Text>
         <View style={styles.stylistDetailWraper}>
           <View style={styles.ratingWrapper}>
             <AntDesign name="star" size={20} color={COLORS.ruby} />
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   itemDetails: {
     fontFamily: "UrbanistRegular",
-    fontSize: 15,
+    fontSize: 16,
     color: "gray",
   },
   stylistDetailWraper: {

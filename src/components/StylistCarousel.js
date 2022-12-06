@@ -1,5 +1,12 @@
-import { StyleSheet, View, Image, Dimensions, Pressable } from "react-native";
-import React from "react";
+import {
+  StyleSheet,
+  View,
+  Image,
+  Dimensions,
+  Pressable,
+  Text,
+} from "react-native";
+import React, { useState } from "react";
 import Entypo from "react-native-vector-icons/Entypo";
 import Feather from "react-native-vector-icons/Feather";
 import { FlatList } from "react-native-gesture-handler";
@@ -7,6 +14,16 @@ import { FlatList } from "react-native-gesture-handler";
 const WIDTH = Dimensions.get("window").width;
 
 const StylistCarousel = ({ stylist, handleClose }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const width = Dimensions.get("window").width;
+
+  const updateCurrentSlideIndex = (e) => {
+    const contentOffsetX = e.nativeEvent.contentOffset.x;
+    const currentIndex = Math.round(contentOffsetX / width);
+    setCurrentIndex(currentIndex);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
@@ -29,6 +46,7 @@ const StylistCarousel = ({ stylist, handleClose }) => {
           contentContainerStyle={{
             flexGrow: 1,
           }}
+          onMomentumScrollEnd={updateCurrentSlideIndex}
           data={stylist.images}
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -47,6 +65,14 @@ const StylistCarousel = ({ stylist, handleClose }) => {
             );
           }}
         />
+        {/* Indicator */}
+        {stylist.images && (
+          <View style={styles.indicatorWrapper}>
+            <Text style={{ color: "white", fontFamily: "UrbanistBold" }}>
+              {currentIndex + 1} / {stylist.images.length}
+            </Text>
+          </View>
+        )}
       </View>
     </View>
   );
@@ -92,5 +118,17 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     paddingRight: 18,
     flexDirection: "row",
+  },
+  indicatorWrapper: {
+    position: "absolute",
+    zIndex: 3,
+    width: 100,
+    height: 30,
+    bottom: 10,
+    right: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
 });

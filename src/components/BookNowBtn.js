@@ -2,9 +2,9 @@ import { StyleSheet, Text, Pressable } from "react-native";
 import React from "react";
 import { COLORS } from "../data/colors";
 
-const BookNowBtn = () => {
+const BookNowBtn = ({ handleBook }) => {
   return (
-    <Pressable style={styles.bookNowBtn}>
+    <Pressable onPress={handleBook} style={styles.bookNowBtn}>
       <Text style={styles.bookNowText}>Book now</Text>
     </Pressable>
   );

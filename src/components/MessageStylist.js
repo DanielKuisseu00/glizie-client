@@ -1,7 +1,15 @@
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
+  Pressable,
+} from "react-native";
 import React from "react";
+import { COLORS } from "../data/colors";
 
-const MessageStylist = ({ stylist }) => {
+const MessageStylist = ({ stylist, standAlone }) => {
   return (
     <View style={styles.messageHostSection}>
       <Text style={styles.messageHostText}>Message the Host</Text>
@@ -38,6 +46,11 @@ const MessageStylist = ({ stylist }) => {
           multiline={true}
         />
       </View>
+      {standAlone && (
+        <Pressable style={styles.submitBtn}>
+          <Text style={styles.submitBtnText}>Submit</Text>
+        </Pressable>
+      )}
     </View>
   );
 };
@@ -80,10 +93,24 @@ const styles = StyleSheet.create({
   textInput: {
     height: 150,
     width: "100%",
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 10,
     textAlignVertical: "top",
     fontFamily: "UrbanistRegular",
     fontSize: 18,
+    padding: 7,
+  },
+  submitBtn: {
+    width: 100,
+    height: 50,
+    backgroundColor: COLORS.ruby,
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "flex-end",
+    marginTop: 20,
+    borderRadius: 7,
+  },
+  submitBtnText: {
+    color: "white",
   },
 });

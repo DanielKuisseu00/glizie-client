@@ -18,6 +18,7 @@ import CartPriceDetails from "../components/CartPriceDetails";
 import PaymentChoise from "../components/PaymentChoise";
 import MessageStylist from "../components/MessageStylist";
 import BookNowBtn from "../components/BookNowBtn";
+import AppointmentCard from "../components/AppointmentCard";
 
 const AppointmentCartScreen = ({ navigation, route }) => {
   const [loaded] = useFonts({
@@ -37,6 +38,11 @@ const AppointmentCartScreen = ({ navigation, route }) => {
   const handleNavBack = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     navigation.pop();
+  };
+
+  const handleBook = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    navigation.navigate("AppointmentConfirmation", { stylist: stylist });
   };
 
   return (
@@ -60,9 +66,7 @@ const AppointmentCartScreen = ({ navigation, route }) => {
 
           {/* Cart items section */}
 
-          <View style={styles.cartItemContainer}>
-            <CartCard />
-          </View>
+          <AppointmentCard />
 
           {/* Gurantee section  */}
 
@@ -86,7 +90,7 @@ const AppointmentCartScreen = ({ navigation, route }) => {
 
           {/* Book Now Section */}
 
-          <BookNowBtn />
+          <BookNowBtn handleBook={handleBook} />
         </KeyboardAvoidingView>
       </ScrollView>
     </SafeAreaView>
@@ -100,10 +104,5 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === "android" ? 25 : 0,
     backgroundColor: "#ffffff",
     flex: 1,
-    // paddingBottom: Platform.OS === "android" ? 20 : 0,
-  },
-  cartItemContainer: {
-    marginHorizontal: 20,
-    marginTop: 20,
   },
 });

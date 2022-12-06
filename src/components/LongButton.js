@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import { useFonts } from "expo-font";
+import { COLORS } from "../data/colors";
 
 const LongButton = ({ btnText, iconImage, iconBackground }) => {
   const [loaded] = useFonts({
@@ -14,14 +15,14 @@ const LongButton = ({ btnText, iconImage, iconBackground }) => {
 
   return (
     <Pressable onPress={() => console.log("clicked")} style={styles.longBtn}>
-      <View
+      {/* <View
         style={[
           styles.iconWrapper,
           iconBackground && { backgroundColor: iconBackground },
         ]}
       >
         <Image source={iconImage} />
-      </View>
+      </View> */}
       <Text style={styles.btnText}>{btnText}</Text>
     </Pressable>
   );
@@ -30,14 +31,16 @@ const LongButton = ({ btnText, iconImage, iconBackground }) => {
 const styles = StyleSheet.create({
   longBtn: {
     height: 60,
-    width: "100%",
+    width: 200,
     borderWidth: 1,
-    borderColor: "rgba(115, 115, 115, 0.5)",
-    borderRadius: 20,
+    backgroundColor: COLORS.ruby,
+    borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
     marginBottom: 15,
+    marginHorizontal: 20,
+    alignSelf: "center",
   },
   iconWrapper: {
     height: 24,
@@ -48,8 +51,9 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   btnText: {
-    fontFamily: "UrbanistSemiBold",
+    fontFamily: "UrbanistBold",
     fontSize: 16,
+    color: "white",
   },
 });
 

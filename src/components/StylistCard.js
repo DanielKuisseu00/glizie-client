@@ -79,20 +79,9 @@ const StylistCard = ({ item, handleNav }) => {
           />
           {/* Indicator */}
           <View style={styles.indicatorWrapper}>
-            {item.images.map((item, index) => {
-              return (
-                <View
-                  key={index}
-                  style={[
-                    styles.indicator,
-                    currentIndex === index && {
-                      backgroundColor: "white",
-                      width: 50,
-                    },
-                  ]}
-                />
-              );
-            })}
+            <Text style={{ color: "white", fontFamily: "UrbanistBold" }}>
+              {currentIndex + 1} / {item.images.length}
+            </Text>
           </View>
         </View>
       </View>
@@ -275,13 +264,14 @@ const styles = StyleSheet.create({
   indicatorWrapper: {
     position: "absolute",
     zIndex: 3,
-    width: 200,
+    width: 100,
     height: 30,
-    bottom: 0,
-    left: 80,
+    bottom: 10,
+    right: 10,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   indicator: {
     width: 40,

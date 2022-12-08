@@ -42,7 +42,7 @@ export const TabNavigation = () => {
           },
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Shop"
         component={ShopScreen}
         options={{
@@ -55,7 +55,7 @@ export const TabNavigation = () => {
             );
           },
         }}
-      />
+      /> */}
       <Tab.Screen
         name="Appointment"
         component={AppointmentScreen}

@@ -4,6 +4,7 @@ import React from "react";
 const ReminderSection = ({ stylist }) => {
   return (
     <View style={styles.reminderWrapper}>
+      <Text style={styles.reminderTitle}>Your'e all set!</Text>
       <Text style={styles.reminderTitle}>
         Thanks for booking with {stylist.name}
       </Text>

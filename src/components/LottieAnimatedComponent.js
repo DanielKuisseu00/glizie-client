@@ -23,7 +23,7 @@ const LottieAnimatedComponent = ({ width, height }) => {
           backgroundColor: "white",
         }}
         source={{
-          uri: "https://assets1.lottiefiles.com/packages/lf20_w8cudppm.json",
+          uri: "https://assets1.lottiefiles.com/packages/lf20_cfzt6qrs.json",
         }}
       />
     </View>

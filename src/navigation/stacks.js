@@ -15,13 +15,14 @@ import StylistScreen from "../screens/StylistScreen";
 import SetDateScreen from "../screens/SetDateScreen";
 import AppointmentCartScreen from "../screens/AppointmentCartScreen";
 import AppointmentConfirmationScreen from "../screens/AppointmentConfirmationScreen";
+import PaymentMethodScreen from "../screens/PaymentMethodScreen";
 
 const Stack = createStackNavigator();
 
 export const HomeStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="home"
+      initialRouteName="PaymentMethod"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="search" component={SearchScreen} />
@@ -33,6 +34,7 @@ export const HomeStack = () => {
         name="AppointmentConfirmation"
         component={AppointmentConfirmationScreen}
       />
+      <Stack.Screen name="PaymentMethod" component={PaymentMethodScreen} />
     </Stack.Navigator>
   );
 };

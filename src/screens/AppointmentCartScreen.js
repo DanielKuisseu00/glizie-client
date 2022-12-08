@@ -45,6 +45,11 @@ const AppointmentCartScreen = ({ navigation, route }) => {
     navigation.navigate("AppointmentConfirmation", { stylist: stylist });
   };
 
+  const handleAddCard = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    navigation.navigate("PaymentMethod");
+  };
+
   return (
     <SafeAreaView style={[styles.container]}>
       <ScrollView style={{ backgroundColor: "#ffffff", paddingBottom: 50 }}>
@@ -82,7 +87,7 @@ const AppointmentCartScreen = ({ navigation, route }) => {
 
           {/* Payment Choice section */}
 
-          <PaymentChoise />
+          <PaymentChoise handleAddCard={handleAddCard} />
 
           {/* Messaage the host section */}
 

@@ -30,17 +30,13 @@ const AppointmentConfirmationScreen = ({ navigation, route }) => {
         <TopBar handleNavBack={handleNavBack} />
 
         {/* Lottie animated component */}
-        <LottieAnimatedComponent width={200} height={200} />
+        {/* <LottieAnimatedComponent width={200} height={200} /> */}
 
         {/* Reminder Section */}
         <ReminderSection stylist={stylist} />
 
         {/* Appointment card section */}
         <AppointmentCard />
-
-        {/* Spacer component */}
-
-        <View style={{ width: "100%", height: 40 }} />
       </ScrollView>
     </SafeAreaView>
   );

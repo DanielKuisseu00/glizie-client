@@ -19,18 +19,23 @@ const CartPriceDetails = () => {
       </View>
 
       <View style={styles.priceConatiner}>
+        <Text style={styles.itemName}>Total</Text>
+        <Text style={styles.price}>$115.00</Text>
+      </View>
+
+      <View style={styles.priceConatiner}>
         <Text
           style={[
             styles.itemName,
             { fontFamily: "UrbanistBold", fontSize: 17 },
           ]}
         >
-          Total (USD)
+          Total to pay now (USD)
         </Text>
         <Text
           style={[styles.price, { fontFamily: "UrbanistBold", fontSize: 17 }]}
         >
-          $115.00
+          $0.00
         </Text>
       </View>
     </View>

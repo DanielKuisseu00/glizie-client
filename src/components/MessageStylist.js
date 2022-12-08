@@ -41,7 +41,7 @@ const MessageStylist = ({ stylist, standAlone }) => {
       <View style={styles.textInputWrapper}>
         <TextInput
           style={styles.textInput}
-          placeholder="Optional"
+          placeholder="Leave a note (Optional)"
           placeholderTextColor={"gray"}
           multiline={true}
         />

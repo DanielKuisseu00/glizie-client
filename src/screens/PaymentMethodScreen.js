@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import { useFonts } from "expo-font";
 import TopBar from "../components/TopBar";
 import CardPaymentList from "../components/CardPaymentList";
+import * as Haptics from "expo-haptics";
 
 const PaymentMethodScreen = ({ navigation }) => {
   const [firstName, setFirstName] = useState("");
@@ -22,6 +23,11 @@ const PaymentMethodScreen = ({ navigation }) => {
 
   const handleNavBack = () => {
     navigation.pop();
+  };
+
+  const handleAddCard = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    navigation.navigate("CardDetails");
   };
 
   const [loaded] = useFonts({
@@ -38,11 +44,12 @@ const PaymentMethodScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <TopBar handleNavBack={handleNavBack} topBarText="Payment Methods" />
+
       <View style={{ flex: 1, paddingHorizontal: 24 }}>
-        <TopBar handleNavBack={handleNavBack} topBarText="Payment Methods" />
         {/* <Text style={styles.title}>Payment Methods</Text> */}
         <Text style={styles.subTitle}> Select a payment method</Text>
-        <CardPaymentList />
+        <CardPaymentList handleAddCard={handleAddCard} />
       </View>
     </SafeAreaView>
   );

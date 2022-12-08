@@ -1,26 +1,35 @@
-import { StyleSheet, Text, View, Pressable, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  Image,
+  Platform,
+} from "react-native";
 import React from "react";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { COLORS } from "../data/colors";
 
-const CardPaymentList = () => {
+const CardPaymentList = ({ handleAddCard }) => {
   return (
     <View style={styles.cardsListWrapper}>
       {/* apple pay option */}
-      <Pressable style={[styles.addCardWrapper]}>
-        <View style={[styles.addIconWrapper, { borderWidth: 0 }]}>
-          <Image
-            style={{ width: "100%", height: "100%" }}
-            source={require("../../assets/images/apple-pay.png")}
-          />
-        </View>
-        <View style={styles.addCardTextWrapper}>
-          <Text style={styles.addCardText}>Apple Pay</Text>
-        </View>
-      </Pressable>
+      {Platform.OS === "ios" && (
+        <Pressable style={[styles.addCardWrapper]}>
+          <View style={[styles.addIconWrapper, { borderWidth: 0 }]}>
+            <Image
+              style={{ width: "100%", height: "100%" }}
+              source={require("../../assets/images/apple-pay.png")}
+            />
+          </View>
+          <View style={styles.addCardTextWrapper}>
+            <Text style={styles.addCardText}>Apple Pay</Text>
+          </View>
+        </Pressable>
+      )}
 
       {/* add card component */}
-      <Pressable style={styles.addCardWrapper}>
+      <Pressable onPress={handleAddCard} style={styles.addCardWrapper}>
         <View style={styles.addIconWrapper}>
           <MaterialIcons name="add" size={20} color={COLORS.ruby} />
         </View>

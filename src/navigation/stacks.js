@@ -16,13 +16,14 @@ import SetDateScreen from "../screens/SetDateScreen";
 import AppointmentCartScreen from "../screens/AppointmentCartScreen";
 import AppointmentConfirmationScreen from "../screens/AppointmentConfirmationScreen";
 import PaymentMethodScreen from "../screens/PaymentMethodScreen";
+import CardDetailsScreen from "../components/CardDetailsScreen";
 
 const Stack = createStackNavigator();
 
 export const HomeStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="PaymentMethod"
+      initialRouteName="home"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="search" component={SearchScreen} />
@@ -35,6 +36,7 @@ export const HomeStack = () => {
         component={AppointmentConfirmationScreen}
       />
       <Stack.Screen name="PaymentMethod" component={PaymentMethodScreen} />
+      <Stack.Screen name="CardDetails" component={CardDetailsScreen} />
     </Stack.Navigator>
   );
 };
